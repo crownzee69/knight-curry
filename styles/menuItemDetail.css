@@ -1,0 +1,465 @@
+/* Menu Item Detail Page Styles */
+
+.menu-item-detail {
+  padding: clamp(40px, 6vw, 80px) 0;
+  background: var(--bg-light);
+  background: #ffffff;
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary-color);
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: clamp(25px, 4vw, 40px);
+  transition: var(--transition-1);
+  font-family: var(--fontFamily-primary);
+}
+
+.back-link:hover {
+  color: var(--primary-dark);
+  gap: 12px;
+}
+
+.menu-item-detail-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(30px, 5vw, 50px);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.menu-item-image-wrapper {
+  width: 100%;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-2);
+  background: #FFF5F5;
+  aspect-ratio: 1;
+  position: relative;
+  min-height: 300px;
+  border: 2px solid rgba(220, 20, 60, 0.15);
+  transition: all 0.4s ease;
+  animation: scaleIn 0.6s ease-out;
+}
+
+.menu-item-image-wrapper:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-red-glow);
+  border-color: var(--primary-color);
+  border-color: #DC143C;
+}
+
+.menu-item-detail-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  transition: transform var(--transition-2);
+  will-change: transform;
+}
+
+.menu-item-image-wrapper:hover .menu-item-detail-image {
+  transform: scale(1.05);
+}
+
+.menu-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3vw, 30px);
+}
+
+.menu-item-header {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 2vw, 18px);
+  padding-bottom: clamp(20px, 3vw, 30px);
+  border-bottom: 2px solid rgba(220, 20, 60, 0.2);
+  animation: slideInDown 0.6s ease-out;
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menu-item-title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--primary-color);
+  line-height: 1.3;
+  font-family: var(--fontFamily-display);
+  margin: 0;
+}
+
+.menu-item-price {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: var(--primary-color);
+  font-family: var(--fontFamily-display);
+}
+
+.menu-item-description {
+  font-size: clamp(1.2rem, 2.3vw, 1.6rem);
+  color: var(--text-light);
+  line-height: 1.7;
+  font-family: var(--fontFamily-primary);
+  margin: 0;
+}
+
+.chef-notes {
+  background: var(--gradient-glow);
+  background: linear-gradient(135deg, #FFF5F5 0%, #FFE5E5 100%);
+  padding: clamp(20px, 3vw, 30px);
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--primary-color);
+  border-left: 4px solid #DC143C;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s ease;
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.chef-notes:hover {
+  transform: translateX(5px);
+  box-shadow: var(--shadow-2);
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.chef-notes h3 {
+  font-size: clamp(1.5rem, 2.8vw, 1.9rem);
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0 0 clamp(12px, 2vw, 18px) 0;
+  font-family: var(--fontFamily-display);
+}
+
+.chef-notes p {
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
+  color: var(--text-dark);
+  line-height: 1.7;
+  margin: 0;
+  font-family: var(--fontFamily-primary);
+}
+
+.menu-item-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(15px, 2.5vw, 20px);
+}
+
+.detail-card {
+  background: #ffffff;
+  padding: clamp(18px, 2.5vw, 24px);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  border: 2px solid rgba(220, 20, 60, 0.1);
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.detail-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-2);
+  border-color: rgba(220, 20, 60, 0.2);
+}
+
+.detail-card h3 {
+  font-size: clamp(1.1rem, 1.9vw, 1.4rem);
+  font-weight: 600;
+  color: var(--text-light);
+  margin: 0 0 clamp(8px, 1.2vw, 12px) 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: var(--fontFamily-primary);
+}
+
+.detail-card p {
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0;
+  font-family: var(--fontFamily-display);
+}
+
+.spice-level {
+  display: flex;
+  align-items: center;
+}
+
+.spice-indicator {
+  display: inline-block;
+  padding: clamp(6px, 1vw, 10px) clamp(12px, 2vw, 18px);
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  font-family: var(--fontFamily-display);
+}
+
+.spice-mild {
+  background: rgba(76, 175, 80, 0.15);
+  color: #4caf50;
+}
+
+.spice-medium {
+  background: var(--gradient-glow);
+  background: linear-gradient(135deg, #FFF5F5 0%, #FFE5E5 100%);
+  color: var(--primary-color);
+  color: #DC143C;
+  border: 2px solid rgba(220, 20, 60, 0.3);
+}
+
+.spice-hot {
+  background: rgba(255, 140, 0, 0.2);
+  color: #FF6B00;
+  border: 1px solid rgba(255, 107, 0, 0.4);
+}
+
+.spice-very-hot {
+  background: rgba(244, 67, 54, 0.15);
+  color: #f44336;
+}
+
+.ingredients-section,
+.nutrition-section,
+.allergens-section,
+.dietary-section {
+  background: #ffffff;
+  padding: clamp(20px, 3vw, 30px);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  border: 2px solid rgba(220, 20, 60, 0.1);
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.ingredients-section:hover,
+.nutrition-section:hover,
+.allergens-section:hover,
+.dietary-section:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-2);
+  border-color: rgba(220, 20, 60, 0.2);
+}
+
+.ingredients-section h3,
+.nutrition-section h3,
+.allergens-section h3,
+.dietary-section h3 {
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 clamp(18px, 2.5vw, 24px) 0;
+  font-family: var(--fontFamily-display);
+}
+
+.ingredients-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: clamp(10px, 1.5vw, 15px);
+}
+
+.ingredients-list li {
+  padding: clamp(8px, 1.2vw, 12px) clamp(12px, 2vw, 18px);
+  background: var(--gradient-glow);
+  background: linear-gradient(135deg, #FFF5F5 0%, #FFE5E5 100%);
+  border-radius: var(--radius-md);
+  font-size: clamp(1.1rem, 1.9vw, 1.4rem);
+  color: var(--text-dark);
+  font-family: var(--fontFamily-primary);
+  border-left: 3px solid var(--primary-color);
+  border-left: 3px solid #DC143C;
+  transition: all 0.3s ease;
+}
+
+.ingredients-list li:hover {
+  transform: translateX(5px);
+  background: linear-gradient(135deg, #FFE5E5 0%, #FFD5D5 100%);
+  box-shadow: var(--shadow-soft);
+}
+
+.nutrition-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(15px, 2.5vw, 20px);
+}
+
+.nutrition-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(12px, 2vw, 18px);
+  background: var(--gradient-glow);
+  background: linear-gradient(135deg, #FFF5F5 0%, #FFE5E5 100%);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--primary-color);
+  border-left: 3px solid #DC143C;
+  transition: all 0.3s ease;
+}
+
+.nutrition-item:hover {
+  transform: translateX(5px);
+  background: linear-gradient(135deg, #FFE5E5 0%, #FFD5D5 100%);
+  box-shadow: var(--shadow-soft);
+}
+
+.nutrition-label {
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
+  color: var(--text-light);
+  font-weight: 600;
+  font-family: var(--fontFamily-primary);
+}
+
+.nutrition-value {
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  font-weight: 700;
+  color: var(--primary-color);
+  font-family: var(--fontFamily-display);
+}
+
+.allergens-tags,
+.dietary-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(10px, 1.5vw, 15px);
+}
+
+.allergen-tag,
+.dietary-tag {
+  display: inline-block;
+  padding: clamp(8px, 1.2vw, 12px) clamp(16px, 2.5vw, 24px);
+  border-radius: var(--radius-full);
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  font-weight: 600;
+  font-family: var(--fontFamily-primary);
+}
+
+.allergen-tag {
+  background: rgba(244, 67, 54, 0.1);
+  color: #d32f2f;
+  border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+.dietary-tag {
+  background: rgba(76, 175, 80, 0.1);
+  color: #388e3c;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.tags-section {
+  margin-top: clamp(10px, 2vw, 20px);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(8px, 1.2vw, 12px);
+}
+
+.tag {
+  display: inline-block;
+  padding: clamp(6px, 1vw, 10px) clamp(14px, 2vw, 20px);
+  background: var(--gradient-glow);
+  background: linear-gradient(135deg, #FFF5F5 0%, #FFE5E5 100%);
+  color: var(--primary-color);
+  color: #DC143C;
+  border-radius: var(--radius-full);
+  font-size: clamp(1rem, 1.7vw, 1.3rem);
+  font-weight: 600;
+  font-family: var(--fontFamily-primary);
+  border: 2px solid rgba(220, 20, 60, 0.3);
+  transition: all 0.3s ease;
+}
+
+.tag:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-soft);
+  border-color: var(--primary-color);
+  border-color: #DC143C;
+}
+
+.menu-item-actions {
+  display: flex;
+  gap: clamp(12px, 2vw, 20px);
+  flex-wrap: wrap;
+  margin-top: clamp(20px, 3vw, 30px);
+  padding-top: clamp(20px, 3vw, 30px);
+  border-top: 2px solid rgba(220, 20, 60, 0.2);
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.menu-item-actions .btn {
+  flex: 1 1 auto;
+  min-width: min(160px, 100%);
+  max-width: 250px;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .menu-item-detail-content {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .menu-item-image-wrapper {
+    position: sticky;
+    top: 100px;
+  }
+
+  .menu-item-details-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .nutrition-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .ingredients-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .menu-item-detail-content {
+    gap: clamp(40px, 6vw, 60px);
+  }
+
+  .menu-item-actions {
+    flex-wrap: nowrap;
+  }
+
+  .menu-item-actions .btn {
+    max-width: 220px;
+  }
+}
+
