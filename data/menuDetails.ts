@@ -23,6 +23,7 @@ export interface MenuItemDetail {
   chefNotes?: string;
   isLateNightSpecial?: boolean; // Mark items as late night specials
   lateNightDisplayName?: string; // Optional custom name for late night page
+  perfectFor?: string; // "Perfect for:" description line
 }
 
 export const menuItemDetails: MenuItemDetail[] = [
@@ -36,7 +37,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     isLateNightSpecial: true,
     lateNightDisplayName: 'Butter Chicken Curry',
     description: 'The ultimate comfort food! Creamy, dreamy tomato curry that hugs your soul. Perfect for when you need a warm hug in a bowl! 🍛',
-    image: '/assets/menu/Biryani/2-1.png',
+    image: '/assets/menu/currries_non_veg/6-2.png',
     ingredients: ['Chicken', 'Tomato', 'Cream', 'Butter', 'Garam Masala', 'Fenugreek', 'Ginger', 'Garlic'],
     allergens: ['Dairy'],
     spiceLevel: 'Medium',
@@ -52,6 +53,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Popular', 'Non-Vegetarian'],
     dietaryInfo: ['Contains Dairy'],
     chefNotes: 'Our signature butter chicken with tender pieces in a rich, creamy tomato gravy.',
+    perfectFor: 'When you need a warm hug in a bowl after a long day.',
   },
   {
     id: 'tandoori-chicken',
@@ -76,6 +78,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Popular', 'Non-Vegetarian', 'Grilled'],
     dietaryInfo: ['Contains Dairy'],
     chefNotes: 'Tender chicken marinated in yogurt and spices, grilled to perfection.',
+    perfectFor: 'Grill lovers who want smoky, spicy perfection.',
   },
   {
     id: 'chicken-biryani-student',
@@ -100,6 +103,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Popular', 'Non-Vegetarian', 'Rice Dish'],
     dietaryInfo: ['Contains Dairy'],
     chefNotes: 'Fragrant basmati rice layered with spiced chicken and aromatic herbs.',
+    perfectFor: 'When you\'re starving and want serious flavor in one box.',
   },
   {
     id: 'chicken-fried-rice',
@@ -124,6 +128,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Popular', 'Non-Vegetarian', 'Rice Dish'],
     dietaryInfo: ['Contains Eggs', 'Contains Soy'],
     chefNotes: 'Wok-fried rice with tender chicken, fresh vegetables, and aromatic spices.',
+    perfectFor: 'Quick meals between classes when you need something satisfying fast.',
   },
   {
     id: 'dosa-student',
@@ -148,6 +153,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Popular', 'Vegetarian', 'Gluten-Free'],
     dietaryInfo: ['Vegetarian', 'Gluten-Free'],
     chefNotes: 'Crispy, golden crepe served with sambar and coconut chutney.',
+    perfectFor: 'Breakfast champions and anyone who loves crispy, golden perfection.',
   },
   {
     id: 'mango-lassi',
@@ -156,7 +162,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     categoryId: 'student-favorites',
     price: '$4.99',
     description: 'Sweet, creamy, and refreshing! Like a tropical vacation in a glass. Perfect to cool down after spicy food! 🥭',
-    image: '/assets/menu/Snacks_&_Sides/3-1.png',
+    image: '/assets/menu/drinks/8-1.png',
     ingredients: ['Yogurt', 'Mango', 'Sugar', 'Cardamom', 'Ice'],
     allergens: ['Dairy'],
     spiceLevel: 'Mild',
@@ -172,6 +178,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Popular', 'Vegetarian', 'Beverage'],
     dietaryInfo: ['Vegetarian', 'Contains Dairy'],
     chefNotes: 'Creamy, sweet mango lassi - the perfect refreshing drink.',
+    perfectFor: 'Cooling down after that extra-spicy curry.',
   },
   {
     id: 'gulab-jamun-student',
@@ -180,7 +187,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     categoryId: 'student-favorites',
     price: '$3.99',
     description: 'Sweet, syrupy, and absolutely heavenly! These golden dumplings are pure dessert magic. One is never enough! 🍡',
-    image: '/assets/menu/Signature_Partition_Bowls/1-1.png',
+    image: '/assets/menu/sweets/7-1.png',
     ingredients: ['Milk Powder', 'Flour', 'Ghee', 'Sugar', 'Rose Water', 'Cardamom', 'Saffron'],
     allergens: ['Dairy', 'Gluten'],
     spiceLevel: 'Mild',
@@ -196,18 +203,19 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Popular', 'Vegetarian', 'Dessert'],
     dietaryInfo: ['Vegetarian', 'Contains Dairy', 'Contains Gluten'],
     chefNotes: 'Soft, melt-in-your-mouth dumplings in sweet rose syrup.',
+    perfectFor: 'Ending the night on a sugar high.',
   },
-  // Platters (formerly Signature Partition Bowls)
+  // Platters
   {
-    id: 'build-your-own-partition-bowl-2-veg-curries',
+    id: 'build-your-own-partition-platter-2-veg-curries',
     name: 'Build-Your-Own Partition Platter (2 Veg Curries)',
     category: 'Platters',
-    categoryId: 'signature-partition-bowls',
+    categoryId: 'signature-partition-platters',
     price: '$11.99',
     isLateNightSpecial: true,
     lateNightDisplayName: "Knight's Signature Platters",
     description: 'Your canvas, your masterpiece! Mix and match two veg curries with fluffy rice, buttery naan, and one sweet. Pure customization magic! 🎨',
-    image: '/assets/menu/Signature_Partition_Bowls/1-1.png',
+    image: '/assets/menu/Signature_Partition_Platters/1-1.png',
     ingredients: ['Basmati Rice', 'Naan Bread', 'Two Vegetable Curries', 'One Sweet', 'Fresh Herbs', 'Indian Spices'],
     allergens: ['Gluten', 'Dairy'],
     spiceLevel: 'Medium',
@@ -223,15 +231,16 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Vegetarian', 'Combo Meal'],
     dietaryInfo: ['Vegetarian', 'Contains Gluten', 'Contains Dairy'],
     chefNotes: 'Choose any two vegetable curries from our selection. Served with fluffy basmati rice, warm naan, and one sweet.',
+    perfectFor: 'Maximum flavor, minimum decisions.',
   },
   {
-    id: 'build-your-own-partition-bowl-1-veg-1-chicken',
+    id: 'build-your-own-partition-platter-1-veg-1-chicken',
     name: 'Build-Your-Own Partition Platter (1 Veg + 1 Chicken)',
     category: 'Platters',
-    categoryId: 'signature-partition-bowls',
+    categoryId: 'signature-partition-platters',
     price: '$12.99',
     description: 'The perfect balance! One veg curry, one chicken curry, plus rice, naan, and dessert. Best of both worlds in one epic platter! ⚖️',
-    image: '/assets/menu/Signature_Partition_Bowls/1-2.png',
+    image: '/assets/menu/Signature_Partition_Platters/1-2.png',
     ingredients: ['Basmati Rice', 'Naan Bread', 'One Vegetable Curry', 'One Chicken Curry', 'One Sweet', 'Fresh Herbs', 'Indian Spices'],
     allergens: ['Gluten', 'Dairy'],
     spiceLevel: 'Medium',
@@ -247,15 +256,16 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Combo Meal'],
     dietaryInfo: ['Contains Gluten', 'Contains Dairy'],
     chefNotes: 'Perfect combination of one vegetable and one chicken curry. Served with basmati rice, naan, and one sweet.',
+    perfectFor: 'When you want the best of both worlds in one epic meal.',
   },
   {
-    id: 'build-your-own-partition-bowl-2-chicken-curries',
+    id: 'build-your-own-partition-platter-2-chicken-curries',
     name: 'Build-Your-Own Partition Platter (2 Chicken Curries)',
     category: 'Platters',
-    categoryId: 'signature-partition-bowls',
+    categoryId: 'signature-partition-platters',
     price: '$13.99',
     description: 'Double the chicken, double the fun! Two amazing chicken curries with all the fixings. For the true chicken lovers out there! 🐔',
-    image: '/assets/menu/Signature_Partition_Bowls/1-3.png',
+    image: '/assets/menu/Signature_Partition_Platters/1-3.png',
     ingredients: ['Basmati Rice', 'Naan Bread', 'Two Chicken Curries', 'One Sweet', 'Fresh Herbs', 'Indian Spices'],
     allergens: ['Gluten', 'Dairy'],
     spiceLevel: 'Medium',
@@ -271,15 +281,16 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Combo Meal'],
     dietaryInfo: ['Contains Gluten', 'Contains Dairy'],
     chefNotes: 'Double the chicken curry goodness! Choose any two chicken curries served with rice, naan, and one sweet.',
+    perfectFor: 'True chicken lovers who can\'t choose just one curry.',
   },
   {
-    id: 'build-your-own-partition-bowl-any-with-1-lamb',
+    id: 'build-your-own-partition-platter-any-with-1-lamb',
     name: 'Build-Your-Own Partition Platter (Any with 1 Lamb)',
     category: 'Platters',
-    categoryId: 'signature-partition-bowls',
+    categoryId: 'signature-partition-platters',
     price: '$14.99',
     description: 'Lamb lovers rejoice! One premium lamb curry plus your choice of another curry. Rich, tender, and absolutely irresistible! 🐑',
-    image: '/assets/menu/Signature_Partition_Bowls/1-4.png',
+    image: '/assets/menu/Signature_Partition_Platters/1-4.png',
     ingredients: ['Basmati Rice', 'Naan Bread', 'One Lamb Curry', 'One Other Curry', 'One Sweet', 'Fresh Herbs', 'Indian Spices'],
     allergens: ['Gluten', 'Dairy'],
     spiceLevel: 'Medium',
@@ -295,15 +306,16 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Combo Meal', 'Premium'],
     dietaryInfo: ['Contains Gluten', 'Contains Dairy'],
     chefNotes: 'Premium lamb curry paired with your choice of another curry. Rich, flavorful, and satisfying.',
+    perfectFor: 'When you want to treat yourself to something premium and luxurious.',
   },
   {
-    id: 'build-your-own-partition-bowl-2-lamb-curries',
+    id: 'build-your-own-partition-platter-2-lamb-curries',
     name: 'Build-Your-Own Partition Platter (2 Lamb Curries)',
     category: 'Platters',
-    categoryId: 'signature-partition-bowls',
+    categoryId: 'signature-partition-platters',
     price: '$16.99',
     description: 'The ultimate lamb experience! Two luxurious lamb curries that melt in your mouth. Worth every penny for the premium taste! 👑',
-    image: '/assets/menu/Signature_Partition_Bowls/1-5.png',
+    image: '/assets/menu/Signature_Partition_Platters/1-5.png',
     ingredients: ['Basmati Rice', 'Naan Bread', 'Two Lamb Curries', 'One Sweet', 'Fresh Herbs', 'Indian Spices'],
     allergens: ['Gluten', 'Dairy'],
     spiceLevel: 'Medium',
@@ -319,6 +331,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Combo Meal', 'Premium'],
     dietaryInfo: ['Contains Gluten', 'Contains Dairy'],
     chefNotes: 'The ultimate lamb experience! Two succulent lamb curries with rice, naan, and one sweet.',
+    perfectFor: 'The ultimate lamb lovers who want double the premium experience.',
   },
   // Biryani
   {
@@ -344,6 +357,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Signature Dish', 'Popular'],
     dietaryInfo: ['Contains Gluten', 'Contains Dairy'],
     chefNotes: 'Slow-cooked with aromatic basmati rice, tender chicken, and our secret blend of biryani spices. Topped with fried onions and served with raita.',
+    perfectFor: 'Biryani lovers who want serious flavor in one box.',
   },
   {
     id: 'veg-biryani',
@@ -368,6 +382,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Vegetarian', 'Signature Dish'],
     dietaryInfo: ['Vegetarian', 'Contains Gluten', 'Contains Dairy'],
     chefNotes: 'A flavorful vegetarian biryani with fresh vegetables, aromatic spices, and basmati rice. Served with raita.',
+    perfectFor: 'Late-night veg option that actually fills you up.',
   },
   // Snacks & Sides
   {
@@ -393,6 +408,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Vegetarian', 'Popular', 'Street Food'],
     dietaryInfo: ['Vegetarian', 'Contains Gluten'],
     chefNotes: 'Golden, crispy samosas filled with perfectly spiced potatoes and peas. Served with mint and tamarind chutneys.',
+    perfectFor: 'Quick snack attacks and sharing with friends.',
   },
   {
     id: 'mix-veg-pakoda',
@@ -417,6 +433,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Vegetarian', 'Gluten-Free'],
     dietaryInfo: ['Vegetarian', 'Gluten-Free'],
     chefNotes: 'Crispy, golden pakodas made with fresh vegetables and our special spiced chickpea batter. Perfect snack with tea or as an appetizer.',
+    perfectFor: 'Veggie lovers who want crispy, addictive snacks.',
   },
   {
     id: 'chicken-tikka-bites',
@@ -441,6 +458,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Popular', 'Grilled'],
     dietaryInfo: ['Contains Dairy'],
     chefNotes: 'Succulent chicken pieces marinated in yogurt and aromatic spices, then grilled to perfection. Served with mint chutney.',
+    perfectFor: 'Gaming nights, study sessions, and "one more piece" moments.',
   },
   {
     id: 'idly-2-pcs',
@@ -465,6 +483,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Vegetarian', 'Gluten-Free', 'Healthy'],
     dietaryInfo: ['Vegetarian', 'Gluten-Free', 'Vegan'],
     chefNotes: 'Soft, fluffy idlis made from fermented rice and lentils. Served with sambar and coconut chutney.',
+    perfectFor: 'Light, healthy meals that still satisfy your cravings.',
   },
   {
     id: 'dosas',
@@ -489,6 +508,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Vegetarian', 'Gluten-Free', 'Popular'],
     dietaryInfo: ['Vegetarian', 'Gluten-Free', 'Vegan'],
     chefNotes: 'Thin, crispy dosa with a golden-brown texture. Served with sambar, coconut chutney, and tomato chutney.',
+    perfectFor: 'Breakfast any time of day when you want something crispy and satisfying.',
   },
   {
     id: 'gobi-manchurian',
@@ -513,6 +533,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Vegetarian', 'Indo-Chinese'],
     dietaryInfo: ['Vegetarian', 'Contains Gluten'],
     chefNotes: 'Crispy fried cauliflower florets coated in a tangy, slightly spicy Manchurian sauce. A popular Indo-Chinese fusion dish.',
+    perfectFor: 'When you want something crispy, tangy, and totally irresistible.',
   },
   {
     id: 'knights-fries',
@@ -537,8 +558,159 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Vegetarian', 'Gluten-Free', 'Popular'],
     dietaryInfo: ['Vegetarian', 'Gluten-Free', 'Vegan'],
     chefNotes: 'Crispy, golden fries seasoned with our special blend of Indian spices. Perfect side dish or snack.',
+    perfectFor: 'When your brain says "fries" but your soul says "masala."',
   },
   // Street Classics
+  {
+    id: 'noodles-chicken',
+    name: 'Noodles Chicken',
+    category: 'Street Classics',
+    categoryId: 'street-classics',
+    price: '$12.99',
+    description: 'Wok-tossed noodles with tender chicken and fresh vegetables in a savory sauce. Quick, satisfying, and packed with flavor! 🍜',
+    image: '/assets/menu/Street_Classics/4-1.png',
+    ingredients: ['Noodles', 'Chicken', 'Bell Peppers', 'Onions', 'Carrots', 'Cabbage', 'Soy Sauce', 'Ginger', 'Garlic', 'Green Chilies', 'Spring Onions'],
+    allergens: ['Gluten', 'Soy'],
+    spiceLevel: 'Medium',
+    preparationTime: '12-15 minutes',
+    servingSize: '1 Serving',
+    calories: '450-550 cal',
+    nutritionalInfo: {
+      protein: '28-32g',
+      carbs: '65-75g',
+      fat: '12-16g',
+      fiber: '4-6g',
+    },
+    tags: ['Popular', 'Indo-Chinese'],
+    dietaryInfo: ['Contains Gluten', 'Contains Soy'],
+    chefNotes: 'Wok-fried noodles with tender chicken pieces, fresh vegetables, and aromatic spices. A popular Indo-Chinese street food favorite.',
+    perfectFor: 'When you want quick, satisfying noodles with serious flavor.',
+  },
+  {
+    id: 'noodles-veg',
+    name: 'Noodles Veg',
+    category: 'Street Classics',
+    categoryId: 'street-classics',
+    price: '$11.99',
+    description: 'Veggie-packed noodles that are anything but boring! Fresh vegetables meet savory sauce in this delicious vegetarian delight! 🥬',
+    image: '/assets/menu/Street_Classics/4-2.png',
+    ingredients: ['Noodles', 'Bell Peppers', 'Onions', 'Carrots', 'Cabbage', 'Broccoli', 'Soy Sauce', 'Ginger', 'Garlic', 'Green Chilies', 'Spring Onions'],
+    allergens: ['Gluten', 'Soy'],
+    spiceLevel: 'Medium',
+    preparationTime: '12-15 minutes',
+    servingSize: '1 Serving',
+    calories: '380-450 cal',
+    nutritionalInfo: {
+      protein: '12-16g',
+      carbs: '65-75g',
+      fat: '10-14g',
+      fiber: '6-8g',
+    },
+    tags: ['Vegetarian', 'Indo-Chinese'],
+    dietaryInfo: ['Vegetarian', 'Contains Gluten', 'Contains Soy'],
+    chefNotes: 'Wok-fried noodles loaded with fresh vegetables and aromatic spices. A vegetarian favorite!',
+    perfectFor: 'Vegetarian food lovers who want noodles packed with flavor.',
+  },
+  {
+    id: 'fried-rice-chicken',
+    name: 'Fried Rice Chicken',
+    category: 'Street Classics',
+    categoryId: 'street-classics',
+    price: '$12.99',
+    description: 'Classic fried rice done right! Tender chicken, fluffy rice, and fresh veggies in perfect harmony. Simple, satisfying, and absolutely delicious! 🍚',
+    image: '/assets/menu/Street_Classics/4-3.png',
+    ingredients: ['Basmati Rice', 'Chicken', 'Eggs', 'Bell Peppers', 'Onions', 'Carrots', 'Peas', 'Soy Sauce', 'Ginger', 'Garlic', 'Spring Onions'],
+    allergens: ['Gluten', 'Soy', 'Eggs'],
+    spiceLevel: 'Mild',
+    preparationTime: '15-18 minutes',
+    servingSize: '1 Serving',
+    calories: '500-600 cal',
+    nutritionalInfo: {
+      protein: '30-35g',
+      carbs: '70-80g',
+      fat: '12-18g',
+      fiber: '4-6g',
+    },
+    tags: ['Popular', 'Indo-Chinese'],
+    dietaryInfo: ['Contains Gluten', 'Contains Soy', 'Contains Eggs'],
+    chefNotes: 'Wok-fried basmati rice with tender chicken, eggs, and fresh vegetables. A classic Indo-Chinese favorite.',
+    perfectFor: 'When you want classic comfort food that hits all the right notes.',
+  },
+  {
+    id: 'fried-rice-veg',
+    name: 'Fried Rice Veg',
+    category: 'Street Classics',
+    categoryId: 'street-classics',
+    price: '$11.99',
+    description: 'Veggie-powered fried rice that\'s anything but basic! Colorful vegetables meet fluffy rice in this vegetarian masterpiece! 🌱',
+    image: '/assets/menu/Street_Classics/4-4.png',
+    ingredients: ['Basmati Rice', 'Bell Peppers', 'Onions', 'Carrots', 'Peas', 'Cabbage', 'Broccoli', 'Soy Sauce', 'Ginger', 'Garlic', 'Spring Onions'],
+    allergens: ['Gluten', 'Soy'],
+    spiceLevel: 'Mild',
+    preparationTime: '15-18 minutes',
+    servingSize: '1 Serving',
+    calories: '420-500 cal',
+    nutritionalInfo: {
+      protein: '10-14g',
+      carbs: '70-80g',
+      fat: '10-14g',
+      fiber: '6-8g',
+    },
+    tags: ['Vegetarian', 'Indo-Chinese'],
+    dietaryInfo: ['Vegetarian', 'Contains Gluten', 'Contains Soy'],
+    chefNotes: 'Wok-fried basmati rice with fresh vegetables and aromatic spices. A vegetarian favorite!',
+    perfectFor: 'Vegetarian food lovers who want hearty, satisfying fried rice.',
+  },
+  {
+    id: 'dumpling-momos-chicken',
+    name: 'Dumpling/Momos Chicken',
+    category: 'Street Classics',
+    categoryId: 'street-classics',
+    price: '$8.99',
+    description: 'Steamed pockets of perfection! Tender chicken filling wrapped in delicate dough. Dip, bite, repeat - you\'ll want all 6! 🥟',
+    image: '/assets/menu/Street_Classics/4-5.png',
+    ingredients: ['All-Purpose Flour', 'Chicken', 'Onions', 'Ginger', 'Garlic', 'Cilantro', 'Soy Sauce', 'Black Pepper', 'Salt'],
+    allergens: ['Gluten', 'Soy'],
+    spiceLevel: 'Medium',
+    preparationTime: '15-20 minutes',
+    servingSize: '6 Pieces',
+    calories: '280-340 cal',
+    nutritionalInfo: {
+      protein: '20-24g',
+      carbs: '38-42g',
+      fat: '8-12g',
+      fiber: '2-3g',
+    },
+    tags: ['Popular', 'Steamed'],
+    dietaryInfo: ['Contains Gluten', 'Contains Soy'],
+    chefNotes: 'Steamed chicken momos (dumplings) with a flavorful filling. Served with spicy tomato chutney and sesame sauce.',
+    perfectFor: 'When you want bite-sized perfection that disappears way too fast.',
+  },
+  {
+    id: 'dumpling-momos-veg',
+    name: 'Dumpling/Momos Veg',
+    category: 'Street Classics',
+    categoryId: 'street-classics',
+    price: '$7.99',
+    description: 'Veggie-filled dumplings that are pure joy! Fresh vegetables wrapped in delicate dough. So good, you\'ll forget they\'re vegetarian! 🥬',
+    image: '/assets/menu/Street_Classics/4-6.png',
+    ingredients: ['All-Purpose Flour', 'Cabbage', 'Carrots', 'Onions', 'Ginger', 'Garlic', 'Cilantro', 'Soy Sauce', 'Black Pepper', 'Salt'],
+    allergens: ['Gluten', 'Soy'],
+    spiceLevel: 'Medium',
+    preparationTime: '15-20 minutes',
+    servingSize: '6 Pieces',
+    calories: '240-300 cal',
+    nutritionalInfo: {
+      protein: '8-12g',
+      carbs: '38-42g',
+      fat: '6-10g',
+      fiber: '4-6g',
+    },
+    tags: ['Vegetarian', 'Steamed'],
+    dietaryInfo: ['Vegetarian', 'Contains Gluten', 'Contains Soy'],
+    chefNotes: 'Steamed vegetable momos (dumplings) with a fresh, flavorful filling. Served with spicy tomato chutney and sesame sauce.',
+    perfectFor: 'Vegetarian snack lovers who want something light yet satisfying.',
+  },
   {
     id: 'samosa-chaat',
     name: 'Samosa Chaat',
@@ -546,7 +718,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     categoryId: 'street-classics',
     price: '$8.99',
     description: 'Street food royalty! Crushed samosas meet cool yogurt, tangy chutneys, and a sprinkle of magic. Every spoonful is a flavor adventure! 🎪',
-    image: '/assets/menu/Street_Classics/4-1.png',
+    image: '/assets/menu/Street_Classics/4-7.png',
     ingredients: ['Samosas', 'Chickpeas', 'Yogurt', 'Tamarind Chutney', 'Mint Chutney', 'Onions', 'Tomatoes', 'Cilantro', 'Sev', 'Chaat Masala', 'Red Chili Powder'],
     allergens: ['Gluten', 'Dairy'],
     spiceLevel: 'Medium',
@@ -562,6 +734,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Vegetarian', 'Street Food', 'Popular'],
     dietaryInfo: ['Vegetarian', 'Contains Gluten', 'Contains Dairy'],
     chefNotes: 'Crushed samosas topped with spiced chickpeas, yogurt, tangy chutneys, and fresh toppings. A classic Indian street food favorite.',
+    perfectFor: 'Sharing with friends… or not sharing at all.',
   },
   // Desserts
   {
@@ -587,6 +760,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Vegetarian', 'Dessert', 'Popular'],
     dietaryInfo: ['Vegetarian', 'Contains Gluten', 'Contains Dairy'],
     chefNotes: 'Soft, melt-in-your-mouth milk dumplings soaked in sweet, rose-flavored syrup. A classic Indian dessert.',
+    perfectFor: 'Ending the night on a sugar high.',
   },
   {
     id: 'kulfi',
@@ -595,7 +769,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     categoryId: 'desserts-drinks',
     price: '$2.99',
     description: 'Ice cream, but make it Indian! Rich, creamy, and denser than regular ice cream. One lick and you\'ll be hooked! 🍦',
-    image: '/assets/menu/Desserts/7-2.png',
+    image: '/assets/menu/sweets/7-2.png',
     ingredients: ['Whole Milk', 'Sugar', 'Cardamom', 'Pistachios', 'Almonds', 'Saffron'],
     allergens: ['Dairy', 'Nuts'],
     spiceLevel: 'Mild',
@@ -611,6 +785,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Vegetarian', 'Dessert', 'Frozen'],
     dietaryInfo: ['Vegetarian', 'Contains Dairy', 'Contains Nuts'],
     chefNotes: 'Rich, creamy traditional Indian ice cream made by reducing milk and flavored with cardamom, saffron, and nuts. Denser than regular ice cream.',
+    perfectFor: 'Ice cream lovers who want something richer and more indulgent.',
   },
   {
     id: 'rasmalai',
@@ -619,7 +794,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     categoryId: 'desserts-drinks',
     price: '$4.99',
     description: 'Soft, pillowy paneer dumplings floating in sweet, flavored milk. Light, refreshing, and absolutely divine! ☁️',
-    image: '/assets/menu/Desserts/7-3.png',
+    image: '/assets/menu/sweets/7-3.png',
     ingredients: ['Paneer', 'Milk', 'Sugar', 'Cardamom', 'Saffron', 'Pistachios', 'Almonds'],
     allergens: ['Dairy', 'Nuts'],
     spiceLevel: 'Mild',
@@ -635,6 +810,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Vegetarian', 'Dessert', 'Premium'],
     dietaryInfo: ['Vegetarian', 'Contains Dairy', 'Contains Nuts'],
     chefNotes: 'Soft, spongy paneer dumplings soaked in sweetened, flavored milk (rabri). Garnished with pistachios and almonds.',
+    perfectFor: 'When you want a light, refreshing dessert that feels luxurious.',
   },
   // Drinks
   {
@@ -660,6 +836,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Vegetarian', 'Refreshing', 'Popular'],
     dietaryInfo: ['Vegetarian', 'Contains Dairy'],
     chefNotes: 'Creamy, sweet lassi made with fresh mango pulp and yogurt. Perfectly balanced and refreshing.',
+    perfectFor: 'Cooling down after that extra-spicy curry.',
   },
   {
     id: 'salt-lassi',
@@ -684,6 +861,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Vegetarian', 'Digestive'],
     dietaryInfo: ['Vegetarian', 'Contains Dairy'],
     chefNotes: 'Cooling, savory lassi perfect for digestion. Made with yogurt, salt, and aromatic spices.',
+    perfectFor: 'When you need something cooling and digestive after a heavy meal.',
   },
   {
     id: 'masala-chai',
@@ -708,6 +886,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Vegetarian', 'Traditional', 'Popular'],
     dietaryInfo: ['Vegetarian', 'Contains Dairy', 'Contains Caffeine'],
     chefNotes: 'Aromatic, spiced tea brewed with milk and a blend of traditional Indian spices. Warm and comforting.',
+    perfectFor: 'Warm hugs in a cup when you need a pick-me-up.',
   },
   {
     id: 'indian-coffee',
@@ -732,6 +911,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Vegetarian', 'Strong'],
     dietaryInfo: ['Vegetarian', 'Contains Dairy', 'Contains Caffeine'],
     chefNotes: 'Strong, rich coffee brewed the traditional South Indian way with milk and a hint of cardamom.',
+    perfectFor: 'Coffee lovers who want an authentic, bold kick.',
   },
   {
     id: 'karak-tea',
@@ -756,6 +936,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Vegetarian', 'Strong'],
     dietaryInfo: ['Vegetarian', 'Contains Dairy', 'Contains Caffeine'],
     chefNotes: 'Extra strong, concentrated tea with milk and spices. A favorite in Middle Eastern and South Asian cuisine.',
+    perfectFor: 'When you need an intense wake-up call that keeps you going.',
   },
   {
     id: 'iced-tea',
@@ -780,6 +961,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Vegetarian', 'Refreshing', 'Gluten-Free'],
     dietaryInfo: ['Vegetarian', 'Gluten-Free', 'Vegan', 'Contains Caffeine'],
     chefNotes: 'Refreshing iced tea with a hint of lemon and mint. Perfect for cooling down.',
+    perfectFor: 'Simple, classic refreshment that never goes out of style.',
   },
   {
     id: 'sodas',
@@ -804,6 +986,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Vegetarian', 'Refreshing', 'Gluten-Free'],
     dietaryInfo: ['Vegetarian', 'Gluten-Free', 'Vegan'],
     chefNotes: 'Assorted soft drinks including Coca-Cola, Pepsi, Sprite, and more. Served chilled.',
+    perfectFor: 'Classic fizzy favorites when you need to quench your thirst.',
   },
   // Bread
   {
@@ -829,6 +1012,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Vegetarian', 'Popular'],
     dietaryInfo: ['Vegetarian', 'Contains Gluten', 'Contains Dairy'],
     chefNotes: 'Soft, fluffy naan bread brushed with butter and baked in our tandoor oven. Perfect with any curry.',
+    perfectFor: 'The perfect companion to scoop up any curry.',
   },
   {
     id: 'garlic-naan',
@@ -853,6 +1037,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Vegetarian', 'Popular', 'Garlic'],
     dietaryInfo: ['Vegetarian', 'Contains Gluten', 'Contains Dairy'],
     chefNotes: 'Buttery naan topped with fresh garlic and cilantro. Aromatic and flavorful, perfect for scooping up curries.',
+    perfectFor: 'Garlic lovers who want aromatic perfection with every bite.',
   },
   // Curries (Vegetarian)
   {
@@ -880,6 +1065,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Vegetarian', 'Popular'],
     dietaryInfo: ['Vegetarian', 'Contains Dairy'],
     chefNotes: 'Tender paneer cubes grilled and simmered in a rich, creamy tomato-based gravy. A vegetarian favorite!',
+    perfectFor: 'Vegetarian Knights who still want that "cheesy" comfort.',
   },
   {
     id: 'chole',
@@ -904,6 +1090,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Vegetarian', 'Protein Rich'],
     dietaryInfo: ['Vegetarian', 'Gluten-Free', 'Vegan'],
     chefNotes: 'Hearty chickpeas cooked in a robust, spicy gravy. Perfect with naan or rice.',
+    perfectFor: 'When you want hearty, protein-packed comfort food.',
   },
   {
     id: 'dal-tadka',
@@ -928,6 +1115,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Vegetarian', 'Comfort Food'],
     dietaryInfo: ['Vegetarian', 'Contains Dairy'],
     chefNotes: 'Comforting yellow lentils tempered with aromatic spices. A staple of Indian cuisine.',
+    perfectFor: 'Simple comfort food that feels like home.',
   },
   {
     id: 'palak-paneer',
@@ -952,6 +1140,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Vegetarian', 'Healthy'],
     dietaryInfo: ['Vegetarian', 'Contains Dairy'],
     chefNotes: 'Soft paneer cubes in a creamy, flavorful spinach gravy. Nutritious and delicious!',
+    perfectFor: 'When you want healthy comfort food that actually tastes amazing.',
   },
   {
     id: 'paneer-makhani',
@@ -976,6 +1165,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Vegetarian', 'Rich'],
     dietaryInfo: ['Vegetarian', 'Contains Dairy', 'Contains Nuts'],
     chefNotes: 'Creamy, buttery paneer in a rich tomato and cashew-based sauce. Indulgent and satisfying.',
+    perfectFor: 'When you want pure indulgence and luxury in every bite.',
   },
   {
     id: 'aloo-gobi',
@@ -1000,6 +1190,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Vegetarian', 'Gluten-Free'],
     dietaryInfo: ['Vegetarian', 'Gluten-Free', 'Vegan'],
     chefNotes: 'Classic combination of potatoes and cauliflower cooked with traditional spices. Simple and flavorful.',
+    perfectFor: 'Classic comfort food that never goes out of style.',
   },
   {
     id: 'mix-veg-curry-navratan-korma',
@@ -1024,6 +1215,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Vegetarian', 'Premium'],
     dietaryInfo: ['Vegetarian', 'Contains Dairy', 'Contains Nuts'],
     chefNotes: 'A royal mix of nine vegetables in a rich, creamy cashew-based korma. Fit for royalty!',
+    perfectFor: 'When you want a celebration of vegetables in one amazing curry.',
   },
   // Curries (Non-Vegetarian)
   {
@@ -1049,6 +1241,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Popular', 'Signature Dish'],
     dietaryInfo: ['Contains Dairy'],
     chefNotes: 'Tender, marinated chicken pieces in a rich, creamy tomato-based gravy. A crowd favorite!',
+    perfectFor: 'The crowd favorite that might just become your new addiction.',
   },
   {
     id: 'butter-chicken',
@@ -1073,6 +1266,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Popular', 'Signature Dish', 'Mild'],
     dietaryInfo: ['Contains Dairy', 'Contains Nuts'],
     chefNotes: 'Creamy, buttery chicken in a mild, rich tomato and cashew sauce. Perfect for those who prefer milder flavors.',
+    perfectFor: 'Mild enough for everyone, delicious enough to make you want more.',
   },
   {
     id: 'chicken-curry',
@@ -1097,6 +1291,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Traditional', 'Classic'],
     dietaryInfo: ['Contains Dairy'],
     chefNotes: 'Classic Indian chicken curry with traditional spices. Comforting and flavorful.',
+    perfectFor: 'When you want authentic, traditional flavors done right.',
   },
   {
     id: 'lamb-tikka-masala',
@@ -1121,6 +1316,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Premium', 'Rich'],
     dietaryInfo: ['Contains Dairy'],
     chefNotes: 'Tender, succulent lamb pieces in a rich, flavorful masala gravy. A premium choice!',
+    perfectFor: 'When you want to treat yourself to something premium and luxurious.',
   },
   {
     id: 'mango-chicken',
@@ -1145,6 +1341,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Unique', 'Sweet & Tangy'],
     dietaryInfo: ['Contains Dairy'],
     chefNotes: 'A unique blend of tender chicken with fresh mango. Sweet, tangy, and absolutely delightful!',
+    perfectFor: 'When you want something unexpected and uniquely delicious.',
   },
 ];
 

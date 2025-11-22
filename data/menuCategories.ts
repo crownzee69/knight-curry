@@ -11,7 +11,7 @@ export interface CategoryMetadata {
 
 export const categoryMetadata: CategoryMetadata[] = [
   {
-    id: 'signature-partition-bowls',
+    id: 'signature-partition-platters',
     name: 'Platters',
     shortName: 'Platters',
     icon: '/assets/category/1.png',

@@ -99,7 +99,7 @@ Add these fields to any item:
 
 Use these `categoryId` values:
 
-- `signature-partition-bowls` - Platters
+- `signature-partition-platters` - Platters
 - `student-favorites` - Student Favorites
 - `biryani` - Biryani
 - `snacks-sides` - Snacks & Sides

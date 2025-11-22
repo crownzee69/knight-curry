@@ -5,6 +5,7 @@ import HomepageBackground from '@/components/HomepageBackground';
 import Link from 'next/link';
 import Image from 'next/image';
 import { menuItemDetails } from '@/data/menuDetails';
+import WallOfFameGallery from '@/components/WallOfFameGallery';
 
 // Helper function to get item ID from name and category
 function getItemId(itemName: string, categoryId: string): string {
@@ -61,7 +62,7 @@ function getItemPrice(itemName: string, categoryId: string): string {
 
 // Mapping late-night specials items to menu items
 const lateNightItemsMap: { [key: string]: { name: string; categoryId: string } } = {
-  "Knight's Signature Platters": { name: "Build-Your-Own Partition Platter (2 Veg Curries)", categoryId: "signature-partition-bowls" },
+  "Knight's Signature Platters": { name: "Build-Your-Own Partition Platter (2 Veg Curries)", categoryId: "signature-partition-platters" },
   "Butter Chicken Curry": { name: "Butter Chicken", categoryId: "student-favorites" },
   "Paneer Tikka Masala Curry": { name: "Paneer Tikka Masala", categoryId: "curries-veg" },
   "Chicken Biryani": { name: "Chicken Biryani", categoryId: "biryani" },
@@ -355,7 +356,7 @@ export default function LateNightSpecialsPage() {
                   }}
                 >
                   <Image
-                    src="/assets/menu/Signature_Partition_Bowls/1-1.png"
+                    src="/assets/menu/Signature_Partition_Platters/1-1.png"
                     alt="Knight's Signature Platters"
                     fill
                     loading="lazy"
@@ -1054,7 +1055,7 @@ export default function LateNightSpecialsPage() {
                   }}
                 >
                   <Image
-                    src="/assets/menu/Signature_Partition_Bowls/1-1.png"
+                    src="/assets/menu/Signature_Partition_Platters/1-1.png"
                     alt="Gulab Jamun Dessert Cup"
                     fill
                     loading="lazy"
@@ -1130,7 +1131,7 @@ export default function LateNightSpecialsPage() {
         {/* Allergy Notice */}
         <section className="py-6 sm:py-8">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-neutral-50 border-2 border-neutral-300 rounded-xl sm:rounded-2xl p-5 sm:p-7 shadow-md">
+            <div className="bg-green-50 border-2 border-green-200 rounded-xl sm:rounded-2xl p-5 sm:p-7 shadow-md">
               <h3 className="text-lg sm:text-xl font-bold text-neutral-900 mb-3 sm:mb-4 text-center">
                 Allergy Notice
               </h3>
@@ -1199,30 +1200,9 @@ export default function LateNightSpecialsPage() {
               </p>
             </div>
             
-            {/* Instagram Gallery Placeholder - Show only 4 images */}
-            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-              {/* Placeholder images - replace with actual Instagram API integration later */}
-              {[1, 2, 3, 4].map((i) => (
-                <div 
-                  key={i} 
-                  className="aspect-square rounded-lg overflow-hidden relative group cursor-pointer transition-all hover:scale-105"
-                  style={{
-                    background: 'linear-gradient(135deg, rgba(220, 38, 38, 0.1) 0%, rgba(220, 38, 38, 0.05) 100%)',
-                    border: '2px solid rgba(220, 38, 38, 0.1)',
-                  }}
-                >
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center p-4">
-                      <ion-icon name="image" className="text-4xl text-neutral-400 mb-2"></ion-icon>
-                      <div className="text-neutral-400 text-xs font-medium">
-                        Photo {i}
-                        <br />
-                        <span className="text-[10px] opacity-75">Coming soon</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
+            {/* Wall of Fame Gallery - Shows 4 images */}
+            <div className="mb-8">
+              <WallOfFameGallery limit={4} />
             </div>
             
             {/* View More Button */}

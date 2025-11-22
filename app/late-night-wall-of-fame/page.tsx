@@ -1,6 +1,7 @@
 import Layout from '@/components/Layout';
 import HomepageBackground from '@/components/HomepageBackground';
 import Link from 'next/link';
+import WallOfFameGallery from '@/components/WallOfFameGallery';
 
 export default function LateNightWallOfFamePage() {
   return (
@@ -33,37 +34,10 @@ export default function LateNightWallOfFamePage() {
           </div>
         </section>
 
-        {/* Instagram Gallery - 20 Images */}
+        {/* Wall of Fame Gallery - Shows all images */}
         <section className="py-8 sm:py-12 pb-16">
           <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-              {/* Placeholder images - replace with actual Instagram API integration later */}
-              {Array.from({ length: 20 }, (_, i) => i + 1).map((i) => (
-                <div 
-                  key={i} 
-                  className="aspect-square rounded-lg overflow-hidden relative group cursor-pointer transition-all hover:scale-105"
-                  style={{
-                    background: 'linear-gradient(135deg, rgba(220, 38, 38, 0.1) 0%, rgba(220, 38, 38, 0.05) 100%)',
-                    border: '2px solid rgba(220, 38, 38, 0.1)',
-                  }}
-                >
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center p-4">
-                      <ion-icon name="image" className="text-3xl sm:text-4xl text-neutral-400 mb-2"></ion-icon>
-                      <div className="text-neutral-400 text-xs font-medium">
-                        Photo {i}
-                        <br />
-                        <span className="text-[10px] opacity-75">Coming soon</span>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Hover overlay */}
-                  <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <ion-icon name="expand-outline" className="text-2xl text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></ion-icon>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <WallOfFameGallery showAll={true} />
           </div>
         </section>
 

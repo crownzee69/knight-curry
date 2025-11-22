@@ -3,63 +3,10 @@
 import { memo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { getCategoriesSorted } from '@/data/menuCategories';
 
-const menuCategories = [
-  {
-    id: 'student-favorites',
-    name: 'Student Favorites',
-    image: '/assets/category/1.png',
-    shortName: 'Student Favorites',
-  },
-  {
-    id: 'signature-partition-bowls',
-    name: 'Platters',
-    image: '/assets/category/1.png',
-    shortName: 'Platters',
-  },
-  {
-    id: 'biryani',
-    name: 'Biryani',
-    image: '/assets/category/2.png',
-    shortName: 'Biryani',
-  },
-  {
-    id: 'snacks-sides',
-    name: 'Snacks & Sides',
-    image: '/assets/category/3.png',
-    shortName: 'Snacks & Sides',
-  },
-  {
-    id: 'street-classics',
-    name: 'Street Classics',
-    image: '/assets/category/4.png',
-    shortName: 'Street Food',
-  },
-  {
-    id: 'curries-veg',
-    name: 'Curries (Veg)',
-    image: '/assets/category/5.png',
-    shortName: 'Veg Curries',
-  },
-  {
-    id: 'curries-non-veg',
-    name: 'Curries (Non-Veg)',
-    image: '/assets/category/6.png',
-    shortName: 'Non-Veg Curries',
-  },
-  {
-    id: 'desserts-drinks',
-    name: 'Desserts & Drinks',
-    image: '/assets/category/7.png',
-    shortName: 'Desserts & Drinks',
-  },
-  {
-    id: 'bread',
-    name: 'Bread',
-    image: '/assets/category/9.png',
-    shortName: 'Bread',
-  },
-];
+// Dynamically get categories from data file
+const menuCategories = getCategoriesSorted();
 
 function MenuCategoriesHero() {
   return (
@@ -93,7 +40,7 @@ function MenuCategoriesHero() {
                 <div className="w-full flex items-center justify-center mb-2 sm:mb-3">
                   <div className="relative w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-44 lg:h-44 transition-transform duration-300 group-active:scale-95 group-hover:scale-110">
                     <Image
-                      src={category.image}
+                      src={category.icon}
                       width={280}
                       height={280}
                       alt={category.name}

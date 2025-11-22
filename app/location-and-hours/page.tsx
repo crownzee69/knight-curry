@@ -79,7 +79,7 @@ export default function LocationAndHoursPage() {
                 </div>
 
                 {/* Our Location - Below Call Us and Email Us */}
-                <div className="group bg-white rounded-2xl sm:rounded-3xl shadow-xl p-6 sm:p-8 lg:p-10 border border-neutral-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
+                <div className="group bg-gradient-to-br from-amber-50/90 via-orange-50/80 to-red-50/90 rounded-2xl sm:rounded-3xl shadow-xl p-6 sm:p-8 lg:p-10 border-2 border-primary/20 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
                   {/* Decorative gradient overlay */}
                   <div className="absolute bottom-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl translate-y-16 translate-x-16"></div>
 
@@ -158,7 +158,7 @@ export default function LocationAndHoursPage() {
                 </div>
 
                 <div className="relative z-10">
-                  <div className="bg-white rounded-xl p-5 sm:p-6 border-2 border-primary/20 shadow-md">
+                  <div className="bg-gradient-to-br from-red-50/90 to-orange-50/90 rounded-xl p-5 sm:p-6 border-2 border-primary/20 shadow-md">
                     <ul className="space-y-3 sm:space-y-4">
                       <li className="flex items-center justify-between py-2 border-b border-neutral-200 last:border-b-0">
                         <span className="font-bold text-base sm:text-lg text-neutral-900">Monday</span>
@@ -194,7 +194,7 @@ export default function LocationAndHoursPage() {
               </div>
 
               {/* Mobile: Our Location - order-3 (third) */}
-              <div className="order-3 lg:hidden group bg-white rounded-2xl sm:rounded-3xl shadow-xl p-6 sm:p-8 lg:p-10 border border-neutral-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
+              <div className="order-3 lg:hidden group bg-gradient-to-br from-amber-50/90 via-orange-50/80 to-red-50/90 rounded-2xl sm:rounded-3xl shadow-xl p-6 sm:p-8 lg:p-10 border-2 border-primary/20 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
                 {/* Decorative gradient overlay */}
                 <div className="absolute bottom-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl translate-y-16 translate-x-16"></div>
 

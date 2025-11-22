@@ -9,10 +9,10 @@ function PremiumMarquee() {
     'Late Night Food • Halal • Affordable • Open Late • Biryani Lovers Welcome • Hungry Knights Eat Here';
 
   return (
-    <section className="relative w-full overflow-hidden py-3 sm:py-4 lg:py-5">
+    <section className="relative w-full overflow-hidden py-2 sm:py-2.5 lg:py-3">
       {/* CONTAINER - Increased Width */}
       <div
-        className="relative mx-2 sm:mx-3 lg:mx-4 rounded-2xl sm:rounded-3xl overflow-hidden"
+        className="relative mx-2 sm:mx-3 lg:mx-4 rounded-xl sm:rounded-2xl overflow-hidden"
         style={{
           background: 'linear-gradient(135deg, rgba(220, 38, 38, 0.15) 0%, rgba(185, 28, 28, 0.2) 50%, rgba(249, 115, 22, 0.15) 100%)',
           backdropFilter: 'blur(16px)',
@@ -53,25 +53,25 @@ function PremiumMarquee() {
 
         {/* TRUE PERFECT MARQUEE */}
         <div className="relative flex overflow-hidden">
-          <div className="flex whitespace-nowrap py-4 sm:py-5 lg:py-6 animate-marquee">
+          <div className="flex whitespace-nowrap py-2.5 sm:py-3 lg:py-3.5 animate-marquee">
 
             {[...Array(2)].map((_, i) => (
               <div 
                 key={i}
-                className="flex items-center gap-5 sm:gap-7 lg:gap-8 mx-8 sm:mx-12 lg:mx-16"
+                className="flex items-center gap-3 sm:gap-4 lg:gap-5 mx-4 sm:mx-6 lg:mx-8"
               >
                 
                 {/* LEFT FIRE */}
                 <Image
                   src={fireIcon}
                   alt="Fire"
-                  width={48}
-                  height={48}
+                  width={32}
+                  height={32}
                   priority
                   className="flex-shrink-0 select-none"
                   style={{
-                    width: 'clamp(32px, 3.5vw, 48px)',
-                    height: 'clamp(32px, 3.5vw, 48px)',
+                    width: 'clamp(24px, 2.5vw, 32px)',
+                    height: 'clamp(24px, 2.5vw, 32px)',
                   }}
                 />
 
@@ -79,7 +79,7 @@ function PremiumMarquee() {
                 <span
                   style={{
                     fontFamily: 'var(--font-anton), Anton, sans-serif',
-                    fontSize: 'clamp(1.125rem, 2vw + 0.25rem, 1.75rem)',
+                    fontSize: 'clamp(0.875rem, 1.5vw + 0.125rem, 1.25rem)',
                     fontWeight: 400,
                     letterSpacing: '0.05em',
                     color: '#8B0000',
@@ -92,18 +92,18 @@ function PremiumMarquee() {
                 <Image
                   src={fireIcon}
                   alt="Fire"
-                  width={48}
-                  height={48}
+                  width={32}
+                  height={32}
                   priority
                   className="flex-shrink-0 select-none"
                   style={{
-                    width: 'clamp(32px, 3.5vw, 48px)',
-                    height: 'clamp(32px, 3.5vw, 48px)',
+                    width: 'clamp(24px, 2.5vw, 32px)',
+                    height: 'clamp(24px, 2.5vw, 32px)',
                   }}
                 />
 
                 {/* BIG GAP BETWEEN REPEATS */}
-                <div className="w-56 sm:w-72 md:w-96 lg:w-[28rem]"></div>
+                <div className="w-32 sm:w-40 md:w-48 lg:w-64"></div>
               </div>
             ))}
 

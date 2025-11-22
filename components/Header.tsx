@@ -114,7 +114,7 @@ function Header() {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary rounded-full transition-all duration-300 group-hover:w-full"></span>
             </Link>
             <Link 
-              href="/menu/signature-partition-bowls" 
+              href="/menu/signature-partition-platters" 
               className={`font-bold text-sm lg:text-base transition-all duration-300 relative group flex items-center gap-1.5 ${
                 pathname.startsWith('/menu') && !pathname.startsWith('/menu/item') 
                   ? 'text-primary' 
@@ -266,7 +266,7 @@ function Header() {
               </button>
               {menuDropdown && (
                 <ul className="list-none bg-neutral-50/80 backdrop-blur-sm">
-                  <li><Link href="/menu/signature-partition-bowls" className="block px-8 py-3 text-sm font-medium text-neutral-700 hover:bg-primary/10 hover:text-primary transition-all duration-300" onClick={closeNavbar}>Signature Platters</Link></li>
+                  <li><Link href="/menu/signature-partition-platters" className="block px-8 py-3 text-sm font-medium text-neutral-700 hover:bg-primary/10 hover:text-primary transition-all duration-300" onClick={closeNavbar}>Signature Platters</Link></li>
                   <li><Link href="/menu/biryani" className="block px-8 py-3 text-sm font-medium text-neutral-700 hover:bg-primary/10 hover:text-primary transition-all duration-300" onClick={closeNavbar}>Biryani</Link></li>
                   <li><Link href="/menu/snacks-sides" className="block px-8 py-3 text-sm font-medium text-neutral-700 hover:bg-primary/10 hover:text-primary transition-all duration-300" onClick={closeNavbar}>Snacks & Sides</Link></li>
                   <li><Link href="/menu/street-classics" className="block px-8 py-3 text-sm font-medium text-neutral-700 hover:bg-primary/10 hover:text-primary transition-all duration-300" onClick={closeNavbar}>Street Classics</Link></li>

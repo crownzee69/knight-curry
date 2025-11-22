@@ -107,7 +107,7 @@ public/assets/menu/
 │   ├── 6-1.png (Chicken Tikka Masala)
 │   ├── 6-2.png (Butter Chicken)
 │   └── ...
-├── Signature_Partition_Bowls/
+├── Signature_Partition_Platters/
 │   ├── 1-1.png
 │   └── ...
 ├── Snacks_&_Sides/
@@ -287,7 +287,7 @@ const lateNightItemsMap = {
 
 ```
 /                           → Homepage
-/menu                       → Redirects to /menu/signature-partition-bowls
+/menu                       → Redirects to /menu/signature-partition-platters
 /menu/[category]            → Category menu page (e.g., /menu/curries-veg)
 /menu/item/[itemId]         → Item detail page (e.g., /menu/item/butter-chicken)
 /late-night-specials        → Late night specials page
@@ -376,7 +376,7 @@ export function getMenuItemsByCategory(categoryId: string): MenuItemDetail[] {
 
 ### Category IDs:
 - `student-favorites`
-- `signature-partition-bowls`
+- `signature-partition-platters`
 - `snacks-sides`
 - `street-classics`
 - `biryani`

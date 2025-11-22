@@ -1,4 +1,5 @@
 'use client';
+
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { memo, useCallback } from 'react';
@@ -26,23 +27,23 @@ const NavItem = memo(({
     >
       {/* Icon Circle */}
       <div
-        className={`flex items-center justify-center mb-1 transition-all duration-300
-        ${isActive ? 'bg-red-600 shadow-lg shadow-red-300/40' : 'bg-gray-100'}
-        rounded-full w-12 h-12`}
+        className={`flex items-center justify-center mb-1 transition-all duration-300 rounded-full w-12 h-12 ${
+          isActive ? 'bg-red-600 shadow-lg shadow-red-300/40' : 'bg-gray-100'
+        }`}
       >
         <ion-icon
           name={isActive ? item.activeIcon : item.icon}
           style={{
-            color: isActive ? '#FFFFFF' : '#6B7280',  // <--- FIXED (ICON WHITE WHEN SELECTED)
+            color: isActive ? '#FFFFFF' : '#6B7280',
             fontSize: '22px',
           }}
         />
       </div>
-
       {/* Label */}
       <span
-        className={`text-[11px] font-medium transition-all duration-300
-        ${isActive ? 'text-red-600' : 'text-gray-500'}`}
+        className={`text-[11px] font-medium transition-all duration-300 ${
+          isActive ? 'text-red-600' : 'text-gray-500'
+        }`}
       >
         {item.label}
       </span>
@@ -62,11 +63,13 @@ export default function MobileNav() {
 
   return (
     <nav 
-      className="fixed bottom-3 left-1/2 -translate-x-1/2 z-50 md:hidden
-      bg-white rounded-3xl shadow-xl border border-gray-200
-      w-[92%] px-3 py-2 backdrop-blur-lg"
+      className="fixed bottom-3 left-1/2 -translate-x-1/2 z-50 md:hidden rounded-3xl shadow-xl border border-green-300/50 w-[92%] px-3 py-2"
       aria-label="Mobile Navigation"
-      style={{ paddingBottom: 'calc(env(safe-area-inset-bottom) + 4px)' }}
+      style={{ 
+        paddingBottom: 'calc(env(safe-area-inset-bottom) + 4px)',
+        backgroundColor: '#7F1D1D',
+        background: '#7F1D1D'
+      }}
     >
       <div className="flex items-center justify-between">
         {navItems.map((item) => (

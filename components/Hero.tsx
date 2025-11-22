@@ -30,12 +30,12 @@ function Hero() {
       id="home"
       style={{
         minHeight: 'auto',
-        paddingTop: '30px',
+        paddingTop: '20px',
         paddingBottom: '0',
         marginBottom: '0',
       }}
     >
-      <div className="relative z-[2] flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 pt-4 pb-0 sm:pt-6 sm:pb-0 lg:pt-8 lg:pb-0" style={{ marginBottom: '0', paddingBottom: '0' }}>
+      <div className="relative z-[2] flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 pt-2 pb-0 sm:pt-4 sm:pb-0 lg:pt-6 lg:pb-0" style={{ marginBottom: '0', paddingBottom: '0' }}>
 
         {/* Main Content Wrapper */}
         <div className="w-full max-w-6xl mx-auto">
@@ -64,8 +64,8 @@ function Hero() {
           <PremiumMarquee />
 
           {/* Offers Carousel */}
-          <div className="relative w-full max-w-6xl mx-auto mt-2 sm:mt-3 lg:mt-4 mb-2 sm:mb-4 lg:mb-6 animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
-            <div className="relative w-full aspect-[3/2] sm:aspect-[3/2] lg:aspect-[3/2] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl ring-4 ring-primary/20 hover:ring-primary/40 transition-all duration-500">
+          <div className="relative w-full max-w-md sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto mt-2 sm:mt-3 lg:mt-4 mb-2 sm:mb-3 lg:mb-4 animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
+            <div className="relative w-full aspect-video rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl ring-2 sm:ring-4 ring-primary/20 hover:ring-primary/40 transition-all duration-500">
               {offerImages.map((image, index) => (
                 <div
                   key={index}

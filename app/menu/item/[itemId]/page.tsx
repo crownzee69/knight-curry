@@ -5,6 +5,7 @@ import { getMenuItemById, menuItemDetails } from '@/data/menuDetails';
 import Layout from '@/components/Layout';
 import HomepageBackground from '@/components/HomepageBackground';
 import BackButton from '@/components/BackButton';
+import IngredientsList from '@/components/IngredientsList';
 
 export async function generateStaticParams() {
   return menuItemDetails.map((item) => ({
@@ -125,9 +126,11 @@ export default async function MenuItemDetailPage({ params }: { params: Promise<{
                 </div>
 
                 {/* Description */}
-                <p className="text-base sm:text-lg text-neutral-700 leading-relaxed animate-fadeInUp" style={{ animationDelay: '0.1s' }}>
-                  {item.description}
-                </p>
+                <div className="bg-gradient-to-br from-amber-50/90 via-orange-50/80 to-red-50/90 p-5 sm:p-6 rounded-xl sm:rounded-2xl shadow-md border border-primary/20 animate-fadeInUp" style={{ animationDelay: '0.1s' }}>
+                  <p className="text-base sm:text-lg text-neutral-800 leading-relaxed font-medium">
+                    {item.description}
+                  </p>
+                </div>
 
                 {/* Chef Notes */}
                 {item.chefNotes && (
@@ -143,7 +146,7 @@ export default async function MenuItemDetailPage({ params }: { params: Promise<{
 
                 {/* Details Grid */}
                 <div className="grid grid-cols-2 gap-3 sm:gap-4 animate-fadeInUp" style={{ animationDelay: '0.3s' }}>
-                  <div className="bg-white p-4 sm:p-5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-neutral-200">
+                  <div className="bg-gradient-to-br from-red-50/80 to-orange-50/80 p-4 sm:p-5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-primary/20">
                     <h3 className="text-xs sm:text-sm font-semibold text-neutral-600 uppercase tracking-wide mb-2">Spice Level</h3>
                     <span className={`inline-block px-3 py-1.5 text-xs sm:text-sm font-bold rounded-full border-2 ${getSpiceColor(item.spiceLevel)}`}>
                         {item.spiceLevel}
@@ -151,7 +154,7 @@ export default async function MenuItemDetailPage({ params }: { params: Promise<{
                   </div>
 
                   {item.calories && (
-                    <div className="bg-white p-4 sm:p-5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-neutral-200">
+                    <div className="bg-gradient-to-br from-red-50/80 to-orange-50/80 p-4 sm:p-5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-primary/20">
                       <h3 className="text-xs sm:text-sm font-semibold text-neutral-600 uppercase tracking-wide mb-2">Calories</h3>
                       <p className="text-lg sm:text-xl font-display font-bold text-neutral-900">{item.calories}</p>
                     </div>
@@ -160,27 +163,12 @@ export default async function MenuItemDetailPage({ params }: { params: Promise<{
 
                 {/* Ingredients */}
                 {item.ingredients && item.ingredients.length > 0 && (
-                  <div className="bg-white p-5 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl shadow-md border border-neutral-200 animate-fadeInUp" style={{ animationDelay: '0.4s' }}>
-                    <h3 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-neutral-900 mb-4 sm:mb-6">
-                      Ingredients
-                    </h3>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
-                      {item.ingredients.map((ingredient, index) => (
-                        <li 
-                          key={index}
-                          className="flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 bg-gradient-to-r from-red-50 to-red-100/50 rounded-lg border-l-3 border-primary text-sm sm:text-base text-neutral-800 hover:translate-x-1 transition-transform duration-300"
-                        >
-                          <ion-icon name="checkmark-circle" className="text-primary text-lg flex-shrink-0"></ion-icon>
-                          <span>{ingredient}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  <IngredientsList ingredients={item.ingredients} />
                 )}
 
                 {/* Nutritional Info */}
                 {item.nutritionalInfo && (
-                  <div className="bg-white p-5 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl shadow-md border border-neutral-200 animate-fadeInUp" style={{ animationDelay: '0.5s' }}>
+                  <div className="bg-gradient-to-br from-amber-50/90 to-orange-50/90 p-5 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl shadow-md border border-primary/20 animate-fadeInUp" style={{ animationDelay: '0.5s' }}>
                     <h3 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-neutral-900 mb-4 sm:mb-6">
                       Nutritional Information
                     </h3>
@@ -218,7 +206,7 @@ export default async function MenuItemDetailPage({ params }: { params: Promise<{
 
                 {/* Allergens */}
                 {item.allergens && item.allergens.length > 0 && (
-                  <div className="bg-white p-5 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl shadow-md border border-neutral-200 animate-fadeInUp" style={{ animationDelay: '0.6s' }}>
+                  <div className="bg-gradient-to-br from-red-50/90 to-pink-50/90 p-5 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl shadow-md border border-primary/20 animate-fadeInUp" style={{ animationDelay: '0.6s' }}>
                     <h3 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-neutral-900 mb-4 sm:mb-6">
                       Allergens
                     </h3>
@@ -237,7 +225,7 @@ export default async function MenuItemDetailPage({ params }: { params: Promise<{
 
                 {/* Dietary Info */}
                 {item.dietaryInfo && item.dietaryInfo.length > 0 && (
-                  <div className="bg-white p-5 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl shadow-md border border-neutral-200 animate-fadeInUp" style={{ animationDelay: '0.7s' }}>
+                  <div className="bg-gradient-to-br from-green-50/90 to-emerald-50/90 p-5 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl shadow-md border border-primary/20 animate-fadeInUp" style={{ animationDelay: '0.7s' }}>
                     <h3 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-neutral-900 mb-4 sm:mb-6">
                       Dietary Information
                     </h3>
@@ -264,7 +252,7 @@ export default async function MenuItemDetailPage({ params }: { params: Promise<{
                   </Link>
                   <Link 
                     href={`/menu/${item.categoryId}`} 
-                    className="flex-1 px-6 sm:px-8 py-3.5 sm:py-4 bg-white text-primary border-2 border-primary font-bold text-base sm:text-lg rounded-xl shadow-md hover:shadow-lg hover:bg-primary/5 transition-all duration-300 active:scale-95 text-center"
+                    className="flex-1 px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-br from-neutral-50 to-neutral-100 text-primary border-2 border-primary font-bold text-base sm:text-lg rounded-xl shadow-md hover:shadow-lg hover:bg-primary/5 transition-all duration-300 active:scale-95 text-center"
                   >
                     View More Items
                   </Link>
