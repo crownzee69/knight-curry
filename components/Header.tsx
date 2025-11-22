@@ -25,6 +25,9 @@ function Header() {
           const documentHeight = document.documentElement.scrollHeight;
           const scrollPercentage = (scrollY + windowHeight) / documentHeight;
           
+          // Check if page is actually scrollable
+          const isScrollable = documentHeight > windowHeight;
+          
           // Check if user is near the bottom (within 200px or 95% scrolled)
           const nearBottom = scrollY + windowHeight >= documentHeight - 200 || scrollPercentage >= 0.95;
 
@@ -35,8 +38,14 @@ function Header() {
             setHeaderActive(false);
           }
 
-          // Show back-to-top button when scrolled 60% or more
-          if (scrollPercentage >= 0.6) {
+          // Show back-to-top button only when:
+          // 1. Page is scrollable
+          // 2. User has scrolled down at least 200px (to avoid showing on short pages at top)
+          // 3. AND either scrolled 60% or more OR scrolled at least 300px
+          const hasScrolledEnough = scrollY >= 200;
+          const shouldShow = isScrollable && hasScrolledEnough && (scrollPercentage >= 0.6 || scrollY >= 300);
+          
+          if (shouldShow) {
             setBackTopActive(true);
             setIsNearBottom(nearBottom);
           } else {
@@ -49,6 +58,9 @@ function Header() {
         ticking = true;
       }
     };
+
+    // Initial check on mount
+    handleScroll();
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -310,12 +322,16 @@ function Header() {
       </header>
 
       {/* Back to Top Button */}
-      <a
-        href="#top"
+      <button
+        onClick={(e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
         className={`fixed bottom-32 md:bottom-8 right-4 sm:right-6 md:right-8 group z-[999] transition-all duration-300 ${backTopActive ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'
           }`}
         aria-label="back to top"
         data-back-top-btn
+        disabled={!backTopActive}
       >
         <div className="flex flex-col items-center gap-2 relative">
           {/* Tooltip/Message - Always shows when button is active */}
@@ -332,7 +348,7 @@ function Header() {
             <ion-icon name="chevron-up" aria-hidden="true" className="text-2xl"></ion-icon>
           </div>
         </div>
-      </a>
+      </button>
     </>
   );
 }
