@@ -45,7 +45,7 @@ function Hero() {
             <h1 className="font-display font-black text-neutral-900 text-3xl sm:text-5xl md:text-6xl lg:text-7xl mb-2 sm:mb-3 lg:mb-4 leading-tight drop-shadow-lg">
               Knights Curry Express
             </h1>
-            <p className="text-base sm:text-xl md:text-2xl font-bold text-neutral-800 mb-3 sm:mb-4 max-w-3xl mx-auto leading-snug drop-shadow-sm px-2">
+            <p className="text-base sm:tedddddddxt-xl md:text-2xl font-bold text-neutral-800 mb-3 sm:mb-4 max-w-3xl mx-auto leading-snug drop-shadow-sm px-2">
               Fresh, Halal & Affordable — Just Minutes from UCF.
             </p>
 
