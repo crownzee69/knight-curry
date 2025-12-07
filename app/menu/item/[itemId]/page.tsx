@@ -67,7 +67,7 @@ export default async function MenuItemDetailPage({ params }: { params: Promise<{
             {/* Back Button */}
             <BackButton 
               fallbackHref={`/menu/${item.categoryId}`}
-              fallbackText={`Back to ${item.category}`}
+              fallbackText="Back"
             />
 
             {/* Main Content Grid */}

@@ -41,7 +41,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     categoryId: 'platters',
     price: '$11.99',
     isLateNightSpecial: true,
-    lateNightDisplayName: "Knight's Veg Platter",
+    lateNightDisplayName: "Knight's Signature Platters",
     description:
       'Create your own veg feast! Pick any two vegetarian curries, served with fragrant rice, warm naan, and a sweet Gulab Jamun.',
     image: '/assets/menu/platters/1.png',
@@ -283,6 +283,8 @@ export const menuItemDetails: MenuItemDetail[] = [
     category: 'Appetizers',
     categoryId: 'appetizers',
     price: '$7.99',
+    isLateNightSpecial: true,
+    lateNightDisplayName: 'Chicken Tikka Bites',
     description:
       'Boneless chicken cubes marinated in yogurt and spices, grilled until juicy with a light char.',
     image: '/assets/menu/appetizers/3.png',
@@ -429,6 +431,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     category: 'Appetizers',
     categoryId: 'appetizers',
     price: '$5.49',
+    isLateNightSpecial: true,
     description:
       'Crispy fries tossed in our special masala seasoning. Desi upgrade to classic fries.',
     image: '/assets/menu/appetizers/7.png',
@@ -766,6 +769,8 @@ export const menuItemDetails: MenuItemDetail[] = [
     category: 'Street Food',
     categoryId: 'street-food',
     price: '$8.99',
+    isLateNightSpecial: true,
+    lateNightDisplayName: 'Samosa Chaat',
     description:
       'Crushed samosas topped with spiced chickpeas, cooling yogurt, chutneys, and crunchy sev.',
     image: '/assets/menu/street-food/8.png',
@@ -808,6 +813,8 @@ export const menuItemDetails: MenuItemDetail[] = [
     category: 'Biryani & Rice Specials',
     categoryId: 'biryani-rice-specials',
     price: '$12.99',
+    isLateNightSpecial: true,
+    lateNightDisplayName: 'Chicken Biryani',
     description:
       'Slow-cooked dum biryani with tender chicken layered with aromatic basmati rice and spices.',
     image: '/assets/menu/biryani-rice-specials/1.png',
@@ -847,6 +854,8 @@ export const menuItemDetails: MenuItemDetail[] = [
     category: 'Biryani & Rice Specials',
     categoryId: 'biryani-rice-specials',
     price: '$11.49',
+    isLateNightSpecial: true,
+    lateNightDisplayName: 'Veg Biryani',
     description:
       'Aromatic basmati rice cooked with colorful vegetables, spices, and herbs.',
     image: '/assets/menu/biryani-rice-specials/2.png',
@@ -2172,6 +2181,8 @@ export const menuItemDetails: MenuItemDetail[] = [
     category: 'Desserts & Drinks',
     categoryId: 'desserts-drinks',
     price: '$3.99',
+    isLateNightSpecial: true,
+    lateNightDisplayName: 'Gulab Jamun Dessert Cup',
     description:
       'Soft, deep-fried milk dumplings soaked in warm rose-cardamom sugar syrup.',
     image: '/assets/menu/desserts-drinks/3.png',
@@ -2233,6 +2244,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     category: 'Desserts & Drinks',
     categoryId: 'desserts-drinks',
     price: '$4.59',
+    isLateNightSpecial: true,
     description:
       'Sweet, creamy yogurt drink blended with mango pulp – chilled and refreshing.',
     image: '/assets/menu/desserts-drinks/5.png',
