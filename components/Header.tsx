@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Flame, Moon } from 'lucide-react';
+import OrderRedirectModal from './OrderRedirectModal';
 
 function Header() {
   const [navbarActive, setNavbarActive] = useState(false);
@@ -12,7 +13,20 @@ function Header() {
   const [backTopActive, setBackTopActive] = useState(false);
   const [isNearBottom, setIsNearBottom] = useState(false);
   const [menuDropdown, setMenuDropdown] = useState(false);
+  const [showOrderModal, setShowOrderModal] = useState(false);
   const pathname = usePathname();
+
+  const ORDER_URL = 'https://online.skytab.com/dfea7884072bca160af82d415c72f7bf';
+
+  const handleOrderClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setShowOrderModal(true);
+  };
+
+  const handleOrderConfirm = () => {
+    setShowOrderModal(false);
+    window.location.href = ORDER_URL;
+  };
 
   useEffect(() => {
     let ticking = false;
@@ -197,13 +211,13 @@ function Header() {
             </a>
 
             {/* Desktop Order Button (Hidden on mobile) - Premium Red Pill */}
-            <Link
-              href="/location-and-hours"
+            <button
+              onClick={handleOrderClick}
               className="hidden md:flex flex-col items-center px-6 lg:px-8 py-2.5 lg:py-3 text-sm lg:text-base font-bold bg-primary text-white rounded-full transition-all duration-300 hover:bg-primary-dark hover:shadow-[0_0_20px_rgba(220,38,38,0.5)] hover:scale-105 active:scale-100 premium-order-button"
             >
               <span>Order Now</span>
               <span className="text-xs font-normal opacity-95">(Pick-up/Delivery)</span>
-            </Link>
+            </button>
 
             {/* Mobile Call Us Button (Visible only on mobile) - Left of Order Now */}
             <a
@@ -216,14 +230,16 @@ function Header() {
             </a>
 
             {/* Mobile Order Now Button (Visible only on mobile) */}
-            <Link
-              href="/location-and-hours"
+            <button
+              onClick={(e) => {
+                handleOrderClick(e);
+                closeNavbar();
+              }}
               className="md:hidden flex items-center gap-1.5 px-3 sm:px-4 py-2 text-xs sm:text-sm font-bold bg-primary text-white rounded-full transition-all duration-300 hover:bg-primary-dark hover:shadow-[0_0_15px_rgba(220,38,38,0.4)] active:scale-95 premium-order-button"
-              onClick={closeNavbar}
             >
               <ion-icon name="cart-outline" className="text-base sm:text-lg"></ion-icon>
               <span>Order Now</span>
-            </Link>
+            </button>
 
             {/* Hamburger Menu Button (Mobile Only) */}
             <button
@@ -349,6 +365,13 @@ function Header() {
           </div>
         </div>
       </button>
+
+      {/* Order Redirect Modal */}
+      <OrderRedirectModal
+        isOpen={showOrderModal}
+        onClose={() => setShowOrderModal(false)}
+        onConfirm={handleOrderConfirm}
+      />
     </>
   );
 }

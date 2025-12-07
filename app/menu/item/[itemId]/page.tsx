@@ -6,6 +6,7 @@ import Layout from '@/components/Layout';
 import HomepageBackground from '@/components/HomepageBackground';
 import BackButton from '@/components/BackButton';
 import IngredientsList from '@/components/IngredientsList';
+import OrderNowButton from '@/components/OrderNowButton';
 
 export async function generateStaticParams() {
   return menuItemDetails.map((item) => ({
@@ -244,12 +245,11 @@ export default async function MenuItemDetailPage({ params }: { params: Promise<{
 
                 {/* Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-6 sm:pt-8 border-t-2 border-primary/20 animate-fadeInUp" style={{ animationDelay: '0.8s' }}>
-                  <Link 
-                    href="/location-and-hours" 
+                  <OrderNowButton 
                     className="flex-1 px-6 sm:px-8 py-3.5 sm:py-4 bg-primary text-white font-bold text-base sm:text-lg rounded-xl shadow-lg hover:shadow-xl hover:bg-primary-dark transition-all duration-300 active:scale-95 text-center"
                   >
                     Order Now
-                  </Link>
+                  </OrderNowButton>
                   <Link 
                     href={`/menu/${item.categoryId}`} 
                     className="flex-1 px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-br from-neutral-50 to-neutral-100 text-primary border-2 border-primary font-bold text-base sm:text-lg rounded-xl shadow-md hover:shadow-lg hover:bg-primary/5 transition-all duration-300 active:scale-95 text-center"
