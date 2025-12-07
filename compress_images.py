@@ -7,7 +7,7 @@ def get_file_size_mb(filepath):
     """Get file size in MB"""
     return os.path.getsize(filepath) / (1024 * 1024)
 
-def compress_image(filepath, max_size_kb=300):
+def compress_image(filepath, max_size_kb=150):
     """Compress image to be under max_size_kb"""
     max_size_bytes = max_size_kb * 1024
     
@@ -107,8 +107,7 @@ def compress_image(filepath, max_size_kb=300):
 def main():
     # Directories to process
     directories = [
-        'public/assets/menu',
-        'public/assets/category'
+        'public/assets/menu'
     ]
     
     # Supported image formats
