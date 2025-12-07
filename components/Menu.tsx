@@ -392,6 +392,20 @@ function Menu({ initialCategory }: { initialCategory?: string }) {
                   </div>
                 </div>
               )}
+
+              {/* Notice for Sandwiches, Burgers & Pizzas */}
+              {activeCategory === 'sandwiches-burgers-pizzas' && (
+                <div className="mt-4 sm:mt-6 flex justify-center">
+                  <div className="bg-gradient-to-r from-orange-50 to-orange-100/50 border-2 border-orange-300 rounded-xl sm:rounded-2xl p-4 sm:p-5 shadow-md inline-block">
+                    <div className="flex items-center gap-3">
+                      <ion-icon name="information-circle" className="text-orange-600 text-2xl sm:text-3xl flex-shrink-0"></ion-icon>
+                      <p className="text-sm sm:text-base font-semibold text-orange-800 whitespace-nowrap flex items-center gap-2">
+                        All of these comes with side of Knights Fries. 🍟
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Actual Content */}
