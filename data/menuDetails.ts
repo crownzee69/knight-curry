@@ -174,7 +174,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     price: '$16.99',
     description:
       'Pure lamb luxury – two portions of rich lamb curry, plus rice, naan, and Gulab Jamun.',
-    image: '/assets/menu/appetizers/5.png',
+    image: '/assets/menu/platters/5.png',
     ingredients: [
       'Basmati Rice',
       'Naan',
