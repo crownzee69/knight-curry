@@ -44,7 +44,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     lateNightDisplayName: "Knight's Signature Platters",
     description:
       'Create your own veg feast! Pick any two vegetarian curries, served with fragrant rice, warm naan, and a sweet Gulab Jamun.',
-    image: '/assets/menu/platters/1.png',
+    image: '/assets/menu/platters/1.jpg',
     ingredients: [
       'Basmati Rice',
       'Naan',
