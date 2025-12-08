@@ -3,12 +3,8 @@ import os
 from PIL import Image
 import sys
 
-def get_file_size_mb(filepath):
-    """Get file size in MB"""
-    return os.path.getsize(filepath) / (1024 * 1024)
-
 def compress_image(filepath, max_size_kb=150):
-    """Compress image to be under max_size_kb"""
+    """Compress image to be under max_size_kb while maintaining sharpness and quality"""
     max_size_bytes = max_size_kb * 1024
     
     # Get current file size
@@ -20,87 +16,102 @@ def compress_image(filepath, max_size_kb=150):
     print(f"Compressing {filepath} ({current_size/1024:.1f}KB -> target: {max_size_kb}KB)")
     
     try:
-        # Open image
+        # Open image and preserve original dimensions
         img = Image.open(filepath)
         original_format = img.format
         original_mode = img.mode
+        original_size = img.size
         
-        # Convert RGBA to RGB if necessary for JPEG
-        if img.mode in ('RGBA', 'LA', 'P'):
-            # For PNG with transparency, keep as PNG but optimize
-            if img.mode == 'RGBA':
-                # Create white background
-                background = Image.new('RGB', img.size, (255, 255, 255))
-                background.paste(img, mask=img.split()[-1])  # Use alpha channel as mask
-                img = background
-            elif img.mode == 'P':
-                img = img.convert('RGB')
+        # Keep original mode for better compression (especially for palette images)
+        # Only convert if absolutely necessary
+        needs_conversion = False
+        if img.mode == 'RGBA':
+            # RGBA needs conversion for PNG compression
+            needs_conversion = True
+        # Keep 'P' (palette) mode - it compresses much better than RGB
         
-        # Save as temporary file first
         temp_path = filepath + '.tmp'
         
-        # Try different quality levels
-        quality = 85
-        min_quality = 50
-        
-        while quality >= min_quality:
-            # Save with current quality
-            if original_format == 'PNG' or filepath.lower().endswith('.png'):
-                # For PNG, use optimize and compress_level
-                img.save(temp_path, 'PNG', optimize=True, compress_level=9)
-            else:
-                # For JPEG
-                img.save(temp_path, 'JPEG', quality=quality, optimize=True)
+        # Strategy: PNG optimization with maximum compression, minimal/no resizing
+        # Keep original format to maintain compatibility with codebase
+        if original_format == 'PNG' or filepath.lower().endswith('.png'):
+            # Try PNG with maximum compression (no resizing first)
+            # Use compress_level=9 (maximum) with optimize=True
+            # Convert RGBA if needed, but keep palette mode
+            save_img = img
+            if needs_conversion and img.mode == 'RGBA':
+                background = Image.new('RGB', img.size, (255, 255, 255))
+                background.paste(img, mask=img.split()[-1])
+                save_img = background
+            save_img.save(temp_path, 'PNG', optimize=True, compress_level=9)
+            current_temp_size = os.path.getsize(temp_path)
             
-            # Check if file size is acceptable
-            new_size = os.path.getsize(temp_path)
-            if new_size <= max_size_bytes:
-                # Replace original with compressed version
+            if current_temp_size <= max_size_bytes:
                 os.replace(temp_path, filepath)
-                print(f"  ✓ Compressed to {new_size/1024:.1f}KB (quality: {quality})")
+                print(f"  ✓ Compressed to {current_temp_size/1024:.1f}KB (PNG max compression, no resize - sharp!)")
                 return True
             
-            # If still too large and quality is low, try resizing
-            if quality == min_quality and new_size > max_size_bytes:
-                # Calculate resize ratio needed
-                ratio = (max_size_bytes / new_size) ** 0.5
-                new_width = int(img.width * ratio * 0.95)  # Slightly more aggressive
-                new_height = int(img.height * ratio * 0.95)
-                img = img.resize((new_width, new_height), Image.Resampling.LANCZOS)
-                print(f"  Resizing to {new_width}x{new_height}")
-                quality = 85  # Reset quality after resize
-                continue
+            # If still too large, calculate smart resize needed
+            # PNG compression alone isn't enough, so we need minimal resizing
+            # Calculate resize ratio needed to get under limit
+            # Use square root of size ratio for area-based calculation
+            ratio = (max_size_bytes / current_temp_size) ** 0.5
+            # Start with calculated ratio, but allow up to 20-25% resize to maintain good quality
+            # Be more aggressive initially to get closer to target
+            resize_ratio = min(0.90, max(0.70, ratio * 0.98))
             
-            quality -= 5
-        
-        # Final attempt with maximum compression
-        if original_format == 'PNG' or filepath.lower().endswith('.png'):
-            img.save(temp_path, 'PNG', optimize=True, compress_level=9)
+            # Iteratively resize until we're under limit
+            # Use LANCZOS resampling (highest quality resampling algorithm)
+            # Try from calculated ratio down to 60% (minimum for acceptable sharpness)
+            min_ratio = 0.60
+            max_iterations = 30  # Prevent infinite loops
+            
+            iteration = 0
+            while resize_ratio >= min_ratio and iteration < max_iterations:
+                new_width = int(original_size[0] * resize_ratio)
+                new_height = int(original_size[1] * resize_ratio)
+                
+                # Skip if dimensions are too small (would cause quality loss)
+                if new_width < 100 or new_height < 100:
+                    break
+                
+                try:
+                    # Use the same image object (preserving mode)
+                    resize_img = save_img if 'save_img' in locals() else img
+                    img_resized = resize_img.resize((new_width, new_height), Image.Resampling.LANCZOS)
+                    img_resized.save(temp_path, 'PNG', optimize=True, compress_level=9)
+                    new_size = os.path.getsize(temp_path)
+                    
+                    if new_size <= max_size_bytes:
+                        os.replace(temp_path, filepath)
+                        print(f"  ✓ Compressed to {new_size/1024:.1f}KB (resized to {new_width}x{new_height}, {resize_ratio*100:.1f}% - maintains sharpness)")
+                        return True
+                except Exception as e:
+                    # If resize fails, try next ratio
+                    pass
+                
+                # Reduce by 2% each iteration
+                resize_ratio *= 0.98
+                iteration += 1
         else:
-            img.save(temp_path, 'JPEG', quality=min_quality, optimize=True)
-        
-        new_size = os.path.getsize(temp_path)
-        if new_size <= max_size_bytes:
-            os.replace(temp_path, filepath)
-            print(f"  ✓ Compressed to {new_size/1024:.1f}KB (maximum compression)")
-            return True
-        else:
-            # Even after maximum compression, still too large - resize further
-            while new_size > max_size_bytes:
-                img = img.resize((int(img.width * 0.9), int(img.height * 0.9)), Image.Resampling.LANCZOS)
-                if original_format == 'PNG' or filepath.lower().endswith('.png'):
-                    img.save(temp_path, 'PNG', optimize=True, compress_level=9)
-                else:
-                    img.save(temp_path, 'JPEG', quality=min_quality, optimize=True)
+            # For JPEG files
+            for quality in range(90, 70, -5):
+                img.save(temp_path, 'JPEG', quality=quality, optimize=True)
                 new_size = os.path.getsize(temp_path)
-            
-            os.replace(temp_path, filepath)
-            print(f"  ✓ Compressed to {new_size/1024:.1f}KB (with resizing)")
-            return True
+                if new_size <= max_size_bytes:
+                    os.replace(temp_path, filepath)
+                    print(f"  ✓ Compressed to {new_size/1024:.1f}KB (JPEG quality: {quality})")
+                    return True
+        
+        # If we get here, compression failed
+        if os.path.exists(temp_path):
+            os.remove(temp_path)
+        print(f"  ✗ Could not compress {filepath} to under {max_size_kb}KB without significant quality loss")
+        return False
             
     except Exception as e:
         print(f"  ✗ Error compressing {filepath}: {e}")
-        if os.path.exists(temp_path):
+        if 'temp_path' in locals() and os.path.exists(temp_path):
             os.remove(temp_path)
         return False
 
@@ -134,7 +145,8 @@ def main():
                 
                 if file_ext in image_extensions:
                     total_files += 1
-                    if compress_image(filepath):
+                    result = compress_image(filepath)
+                    if result:
                         compressed_files += 1
                     else:
                         error_files += 1
@@ -151,4 +163,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

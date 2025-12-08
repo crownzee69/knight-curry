@@ -622,7 +622,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     price: '$9.49 (Chicken) / $8.49 (Veg)',
     description:
       'Crispy fried momos filled with chicken or vegetables. Served hot with spicy chutneys.',
-    image: '/assets/menu/street-food/3.png',
+    image: '/assets/menu/street-food/4.jpg',
     ingredients: [
       'All-Purpose Flour',
       'Chicken or Mixed Vegetables',
@@ -659,7 +659,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     price: '$10.99 (Chicken) / $9.99 (Veg)',
     description:
       'Smoky tandoori momos marinated in yogurt and spices, roasted to perfection. Available with chicken or vegetable fillings.',
-    image: '/assets/menu/street-food/3.png',
+    image: '/assets/menu/street-food/5.jpg',
     ingredients: [
       'All-Purpose Flour',
       'Chicken or Mixed Vegetables',
