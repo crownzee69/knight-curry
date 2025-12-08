@@ -342,9 +342,9 @@ export default function LateNightSpecialsPage() {
                   </p>
 
                   {item.perfectFor && (
-                    <p className="text-xs sm:text-sm text-green-600 font-semibold italic leading-tight">
+                  <p className="text-xs sm:text-sm text-green-600 font-semibold italic leading-tight">
                       Perfect for: {item.perfectFor}
-                    </p>
+                  </p>
                   )}
                 </div>
 

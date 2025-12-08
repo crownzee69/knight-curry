@@ -28,7 +28,7 @@ export interface MenuItemDetail {
   perfectFor?: string; // "Perfect for:" description line
 }
 
-const DEFAULT_IMAGE = '/assets/category/4.png';
+const DEFAULT_IMAGE = '/assets/category/4.webp';
 
 export const menuItemDetails: MenuItemDetail[] = [
   // ─────────────────────────────
@@ -44,7 +44,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     lateNightDisplayName: "Knight's Signature Platters",
     description:
       'Create your own veg feast! Pick any two vegetarian curries, served with fragrant rice, warm naan, and a sweet Gulab Jamun.',
-    image: '/assets/menu/platters/1.jpg',
+    image: '/assets/menu/platters/1.webp',
     ingredients: [
       'Basmati Rice',
       'Naan',
@@ -78,7 +78,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     price: '$12.99',
     description:
       'Best of both worlds! One vegetarian curry and one chicken curry, with rice, naan, and Gulab Jamun.',
-    image: '/assets/menu/platters/2.png',
+    image: '/assets/menu/platters/2.webp',
     ingredients: [
       'Basmati Rice',
       'Naan',
@@ -111,7 +111,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     price: '$13.99',
     description:
       'Double the chicken, double the flavor! Choose any two chicken curries with rice, naan, and Gulab Jamun.',
-    image: '/assets/menu/platters/3.png',
+    image: '/assets/menu/platters/3.webp',
     ingredients: [
       'Basmati Rice',
       'Naan',
@@ -142,7 +142,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     price: '$14.99',
     description:
       'Upgrade to lamb! One luxurious lamb curry plus any second curry of your choice, served with rice, naan, and dessert.',
-    image: '/assets/menu/platters/4.png',
+    image: '/assets/menu/platters/4.webp',
     ingredients: [
       'Basmati Rice',
       'Naan',
@@ -174,7 +174,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     price: '$16.99',
     description:
       'Pure lamb luxury – two portions of rich lamb curry, plus rice, naan, and Gulab Jamun.',
-    image: '/assets/menu/platters/5.png',
+    image: '/assets/menu/platters/5.webp',
     ingredients: [
       'Basmati Rice',
       'Naan',
@@ -209,7 +209,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     price: '$6.99 (Veg) / $9.99 (Lamb)',
     description:
       'Crispy triangular pastries stuffed with spiced potatoes (veg) or rich minced lamb. Served with tangy chutneys.',
-    image: '/assets/menu/appetizers/1.png',
+    image: '/assets/menu/appetizers/1.webp',
     ingredients: [
       'All-Purpose Flour',
       'Potatoes or Minced Lamb',
@@ -246,7 +246,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     price: '$6.99',
     description:
       'Crispy, golden fritters made with mixed vegetables dipped in a spiced chickpea batter.',
-    image: '/assets/menu/appetizers/2.png',
+    image: '/assets/menu/appetizers/2.webp',
     ingredients: [
       'Chickpea Flour',
       'Onions',
@@ -287,7 +287,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     lateNightDisplayName: 'Chicken Tikka Bites',
     description:
       'Boneless chicken cubes marinated in yogurt and spices, grilled until juicy with a light char.',
-    image: '/assets/menu/appetizers/3.png',
+    image: '/assets/menu/appetizers/3.webp',
     ingredients: [
       'Chicken',
       'Yogurt',
@@ -323,7 +323,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     price: '$8.49',
     description:
       'Crispy, spicy South-Indian style fried chicken tossed with curry leaves and chilies.',
-    image: '/assets/menu/appetizers/4.png',
+    image: '/assets/menu/appetizers/4.webp',
     ingredients: [
       'Chicken',
       'Yogurt',
@@ -359,7 +359,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     price: '$8.99',
     description:
       'Indo-Chinese style chicken tossed in a zesty ginger-garlic sauce with peppers and onions.',
-    image: '/assets/menu/appetizers/5.png',
+    image: '/assets/menu/appetizers/5.webp',
     ingredients: [
       'Chicken',
       'Ginger',
@@ -396,7 +396,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     price: '$9.49',
     description:
       'Crispy vegetable balls simmered in a tangy, spicy Manchurian gravy with peppers and onions.',
-    image: '/assets/menu/appetizers/6.png',
+    image: '/assets/menu/appetizers/6.webp',
     ingredients: [
       'Mixed Vegetables',
       'All-Purpose Flour',
@@ -434,7 +434,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     isLateNightSpecial: true,
     description:
       'Crispy fries tossed in our special masala seasoning. Desi upgrade to classic fries.',
-    image: '/assets/menu/appetizers/7.png',
+    image: '/assets/menu/appetizers/7.webp',
     ingredients: [
       'Potatoes',
       'Salt',
@@ -469,7 +469,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     price: '$9.49',
     description:
       'Crispy cauliflower florets in a tangy, spicy Indo-Chinese Manchurian sauce.',
-    image: '/assets/menu/appetizers/8.png',
+    image: '/assets/menu/appetizers/8.webp',
     ingredients: [
       'Cauliflower',
       'All-Purpose Flour',
@@ -511,7 +511,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     price: '$12.99 (Chicken) / $11.99 (Veg)',
     description:
       'Wok-tossed Indo-Chinese style noodles with your choice of chicken or mixed vegetables, peppers, and spring onions.',
-    image: '/assets/menu/street-food/1.png',
+    image: '/assets/menu/street-food/1.webp',
     ingredients: [
       'Noodles',
       'Bell Peppers',
@@ -550,7 +550,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     price: '$12.99 (Chicken) / $11.99 (Veg)',
     description:
       'Classic Indo-Chinese fried rice with your choice of chicken or mixed vegetables, tossed with soy, aromatics, and spring onions.',
-    image: '/assets/menu/street-food/2.png',
+    image: '/assets/menu/street-food/2.webp',
     ingredients: [
       'Basmati Rice',
       'Mixed Vegetables',
@@ -585,7 +585,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     price: '$8.99 (Chicken) / $7.99 (Veg)',
     description:
       'Soft steamed momos stuffed with your choice of chicken or vegetables. Served with spicy chutneys.',
-    image: '/assets/menu/street-food/3.png',
+    image: '/assets/menu/street-food/3.webp',
     ingredients: [
       'All-Purpose Flour',
       'Chicken or Mixed Vegetables',
@@ -622,7 +622,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     price: '$9.49 (Chicken) / $8.49 (Veg)',
     description:
       'Crispy fried momos filled with chicken or vegetables. Served hot with spicy chutneys.',
-    image: '/assets/menu/street-food/4.jpg',
+    image: '/assets/menu/street-food/4.webp',
     ingredients: [
       'All-Purpose Flour',
       'Chicken or Mixed Vegetables',
@@ -659,7 +659,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     price: '$10.99 (Chicken) / $9.99 (Veg)',
     description:
       'Smoky tandoori momos marinated in yogurt and spices, roasted to perfection. Available with chicken or vegetable fillings.',
-    image: '/assets/menu/street-food/5.jpg',
+    image: '/assets/menu/street-food/5.webp',
     ingredients: [
       'All-Purpose Flour',
       'Chicken or Mixed Vegetables',
@@ -702,7 +702,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     price: '$9.99',
     description:
       'Cheesy veg pizza loaded with colorful vegetables on a soft crust.',
-    image: '/assets/menu/street-food/6.png',
+    image: '/assets/menu/street-food/6.webp',
     ingredients: [
       'Pizza Dough',
       'Tomato Sauce',
@@ -737,7 +737,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     price: '$10.99',
     description:
       'Cheesy pizza topped with juicy chicken pieces and veggies on a soft, baked crust.',
-    image: '/assets/menu/street-food/7.png',
+    image: '/assets/menu/street-food/7.webp',
     ingredients: [
       'Pizza Dough',
       'Tomato Sauce',
@@ -773,7 +773,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     lateNightDisplayName: 'Samosa Chaat',
     description:
       'Crushed samosas topped with spiced chickpeas, cooling yogurt, chutneys, and crunchy sev.',
-    image: '/assets/menu/street-food/8.png',
+    image: '/assets/menu/street-food/8.webp',
     ingredients: [
       'Samosas',
       'Chickpeas',
@@ -817,7 +817,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     lateNightDisplayName: 'Chicken Biryani',
     description:
       'Slow-cooked dum biryani with tender chicken layered with aromatic basmati rice and spices.',
-    image: '/assets/menu/biryani-rice-specials/1.png',
+    image: '/assets/menu/biryani-rice-specials/1.webp',
     ingredients: [
       'Basmati Rice',
       'Chicken',
@@ -858,7 +858,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     lateNightDisplayName: 'Veg Biryani',
     description:
       'Aromatic basmati rice cooked with colorful vegetables, spices, and herbs.',
-    image: '/assets/menu/biryani-rice-specials/2.png',
+    image: '/assets/menu/biryani-rice-specials/2.webp',
     ingredients: [
       'Basmati Rice',
       'Mixed Vegetables',
@@ -897,7 +897,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     price: '$10.49',
     description:
       'Light and fragrant rice cooked with mixed vegetables and gentle spices.',
-    image: '/assets/menu/biryani-rice-specials/3.png',
+    image: '/assets/menu/biryani-rice-specials/3.webp',
     ingredients: [
       'Basmati Rice',
       'Mixed Vegetables',
@@ -931,7 +931,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     price: '$14.99',
     description:
       'Fragrant rice cooked with tender goat pieces and whole spices.',
-    image: '/assets/menu/biryani-rice-specials/4.png',
+    image: '/assets/menu/biryani-rice-specials/4.webp',
     ingredients: [
       'Basmati Rice',
       'Goat Meat',
@@ -967,7 +967,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     price: '$2.99',
     description:
       'Plain steamed basmati rice, perfect as a side with any curry.',
-    image: '/assets/menu/biryani-rice-specials/5.png',
+    image: '/assets/menu/biryani-rice-specials/5.webp',
     ingredients: ['Basmati Rice', 'Salt', 'Water'],
     allergens: [],
     spiceLevel: 'Mild',
@@ -993,7 +993,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     price: '$3.49',
     description:
       'Basmati rice tempered with cumin seeds and ghee for a fragrant, simple side.',
-    image: '/assets/menu/biryani-rice-specials/6.png',
+    image: '/assets/menu/biryani-rice-specials/6.webp',
     ingredients: ['Basmati Rice', 'Cumin Seeds', 'Ghee', 'Salt'],
     allergens: ['Dairy'],
     spiceLevel: 'Mild',
@@ -1019,7 +1019,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     price: '$3.99',
     description:
       'Fluffy basmati rice cooked with green peas and mild spices.',
-    image: '/assets/menu/biryani-rice-specials/7.png',
+    image: '/assets/menu/biryani-rice-specials/7.webp',
     ingredients: ['Basmati Rice', 'Green Peas', 'Cumin', 'Ghee', 'Salt'],
     allergens: ['Dairy'],
     spiceLevel: 'Mild',
@@ -1044,14 +1044,14 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'paneer-tikka-masala',
     name: 'Paneer Tikka Masala',
-    category: 'Vegetarian Curries (16 oz box)',
+    category: 'Vegetarian Curries( 16 oz box)',
     categoryId: 'curries-veg',
     price: '$12.99',
     isLateNightSpecial: true,
     lateNightDisplayName: 'Paneer Tikka Masala Curry',
     description:
       'Grilled paneer cubes simmered in a rich, creamy tomato gravy with aromatic spices.',
-    image: '/assets/menu/curries-veg/1.png',
+    image: '/assets/menu/curries-veg/1.webp',
     ingredients: [
       'Paneer',
       'Tomatoes',
@@ -1085,12 +1085,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'chole',
     name: 'Chole (Chickpea Curry)',
-    category: 'Vegetarian Curries (16 oz box)',
+    category: 'Vegetarian Curries( 16 oz box)',
     categoryId: 'curries-veg',
     price: '$12.99',
     description:
       'Hearty chickpeas cooked in a robust, tangy tomato-onion gravy with North Indian spices.',
-    image: '/assets/menu/curries-veg/2.png',
+    image: '/assets/menu/curries-veg/2.webp',
     ingredients: [
       'Chickpeas',
       'Onions',
@@ -1123,12 +1123,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'dal-tadka',
     name: 'Dal Tadka (Lentil)',
-    category: 'Vegetarian Curries (16 oz box)',
+    category: 'Vegetarian Curries( 16 oz box)',
     categoryId: 'curries-veg',
     price: '$11.99',
     description:
       'Yellow lentils cooked till creamy and finished with a ghee tempering of spices.',
-    image: '/assets/menu/curries-veg/3.png',
+    image: '/assets/menu/curries-veg/3.webp',
     ingredients: [
       'Yellow Lentils',
       'Onions',
@@ -1161,12 +1161,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'palak-paneer',
     name: 'Palak Paneer',
-    category: 'Vegetarian Curries (16 oz box)',
+    category: 'Vegetarian Curries( 16 oz box)',
     categoryId: 'curries-veg',
     price: '$12.99',
     description:
       'Soft paneer cubes in a creamy spinach gravy with mild spices.',
-    image: '/assets/menu/curries-veg/4.png',
+    image: '/assets/menu/curries-veg/4.webp',
     ingredients: [
       'Paneer',
       'Spinach',
@@ -1198,12 +1198,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'paneer-makhani',
     name: 'Paneer Makhani',
-    category: 'Vegetarian Curries (16 oz box)',
+    category: 'Vegetarian Curries( 16 oz box)',
     categoryId: 'curries-veg',
     price: '$12.99',
     description:
       'Paneer in a buttery, creamy tomato and cashew sauce that is rich and mildly spiced.',
-    image: '/assets/menu/curries-veg/5.png',
+    image: '/assets/menu/curries-veg/5.webp',
     ingredients: [
       'Paneer',
       'Tomatoes',
@@ -1235,12 +1235,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'mix-veg-navratan-korma',
     name: 'Mix Veg Curry (Navratan Korma)',
-    category: 'Vegetarian Curries (16 oz box)',
+    category: 'Vegetarian Curries( 16 oz box)',
     categoryId: 'curries-veg',
     price: '$13.49',
     description:
       'A royal-style curry with mixed vegetables in a creamy, mildly sweet cashew-based gravy.',
-    image: '/assets/menu/curries-veg/6.png',
+    image: '/assets/menu/curries-veg/6.webp',
     ingredients: [
       'Mixed Vegetables',
       'Cashews',
@@ -1273,12 +1273,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'aloo-gobi',
     name: 'Aloo Gobi (Potato-Cauliflower Curry)',
-    category: 'Vegetarian Curries (16 oz box)',
+    category: 'Vegetarian Curries( 16 oz box)',
     categoryId: 'curries-veg',
     price: '$12.99',
     description:
       'Classic dry-ish curry of potatoes and cauliflower cooked with onions, tomatoes, and spices.',
-    image: '/assets/menu/curries-veg/7.png',
+    image: '/assets/menu/curries-veg/7.webp',
     ingredients: [
       'Potatoes',
       'Cauliflower',
@@ -1315,14 +1315,14 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'butter-chicken',
     name: 'Butter Chicken',
-    category: 'Non-Vegetarian Curries (16 oz box)',
+    category: 'Non Vegetarian Curries(16 oz box)',
     categoryId: 'curries-non-veg',
     price: '$13.99',
     isLateNightSpecial: true,
     lateNightDisplayName: 'Butter Chicken Curry',
     description:
       'Creamy, buttery tomato-based chicken curry with a mild, slightly sweet profile.',
-    image: '/assets/menu/curries-non-veg/1.png',
+    image: '/assets/menu/curries-non-veg/1.webp',
     ingredients: [
       'Chicken',
       'Tomatoes',
@@ -1355,12 +1355,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'chicken-tikka-masala-curry',
     name: 'Chicken Tikka Masala',
-    category: 'Non-Vegetarian Curries (16 oz box)',
+    category: 'Non Vegetarian Curries(16 oz box)',
     categoryId: 'curries-non-veg',
     price: '$13.99',
     description:
       'Grilled chicken tikka pieces in a creamy, spiced tomato gravy with a smoky touch.',
-    image: '/assets/menu/curries-non-veg/2.png',
+    image: '/assets/menu/curries-non-veg/2.webp',
     ingredients: [
       'Chicken',
       'Tomatoes',
@@ -1393,12 +1393,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'chicken-korma',
     name: 'Chicken Korma (Chicken with Mix Veggies)',
-    category: 'Non-Vegetarian Curries (16 oz box)',
+    category: 'Non Vegetarian Curries(16 oz box)',
     categoryId: 'curries-non-veg',
     price: '$14.49',
     description:
       'Chicken and mixed vegetables in a rich, mildly spiced, creamy korma gravy.',
-    image: '/assets/menu/curries-non-veg/3.png',
+    image: '/assets/menu/curries-non-veg/3.webp',
     ingredients: [
       'Chicken',
       'Mixed Vegetables',
@@ -1429,12 +1429,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'traditional-chicken-curry',
     name: 'Traditional Chicken Curry',
-    category: 'Non-Vegetarian Curries (16 oz box)',
+    category: 'Non Vegetarian Curries(16 oz box)',
     categoryId: 'curries-non-veg',
     price: '$13.99',
     description:
       'Classic homestyle chicken curry with onions, tomatoes, and a balanced spice mix.',
-    image: '/assets/menu/curries-non-veg/4.png',
+    image: '/assets/menu/curries-non-veg/4.webp',
     ingredients: [
       'Chicken',
       'Onions',
@@ -1467,12 +1467,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'lamb-tikka-masala',
     name: 'Lamb Tikka Masala',
-    category: 'Non-Vegetarian Curries (16 oz box)',
+    category: 'Non Vegetarian Curries(16 oz box)',
     categoryId: 'curries-non-veg',
     price: '$14.99',
     description:
       'Tender lamb pieces cooked in a rich, spiced tomato and cream gravy.',
-    image: '/assets/menu/curries-non-veg/5.png',
+    image: '/assets/menu/curries-non-veg/5.webp',
     ingredients: [
       'Lamb',
       'Tomatoes',
@@ -1505,12 +1505,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'chicken-saag',
     name: 'Chicken Saag (Spinach)',
-    category: 'Non-Vegetarian Curries (16 oz box)',
+    category: 'Non Vegetarian Curries(16 oz box)',
     categoryId: 'curries-non-veg',
     price: '$13.99',
     description:
       'Chicken simmered in a smooth spinach gravy with gentle spices.',
-    image: '/assets/menu/curries-non-veg/6.png',
+    image: '/assets/menu/curries-non-veg/6.webp',
     ingredients: [
       'Chicken',
       'Spinach',
@@ -1541,12 +1541,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'mango-chicken',
     name: 'Mango Chicken',
-    category: 'Non-Vegetarian Curries (16 oz box)',
+    category: 'Non Vegetarian Curries(16 oz box)',
     categoryId: 'curries-non-veg',
     price: '$13.99',
     description:
       'Chicken cooked with fresh mango for a sweet, tangy, and mildly spiced curry.',
-    image: '/assets/menu/curries-non-veg/7.png',
+    image: '/assets/menu/curries-non-veg/7.webp',
     ingredients: [
       'Chicken',
       'Mango',
@@ -1584,12 +1584,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'veg-club-sandwich',
     name: 'Veg Club Sandwich',
-    category: 'Sandwiches • Burgers • Pizzas',
+    category: 'Sandwiches-Burgers-Pizzas',
     categoryId: 'sandwiches-burgers-pizzas',
     price: '$6.99',
     description:
       'Layered sandwich stuffed with fresh veggies, spreads, and toasted bread. Served with Knights Fries.',
-    image: '/assets/menu/sandwiches-burgers-pizzas/2.png',
+    image: '/assets/menu/sandwiches-burgers-pizzas/2.webp',
     ingredients: [
       'Bread',
       'Lettuce',
@@ -1619,12 +1619,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'tikka-sandwich-veg',
     name: 'Tikka Sandwich (Veg)',
-    category: 'Sandwiches • Burgers • Pizzas',
+    category: 'Sandwiches-Burgers-Pizzas',
     categoryId: 'sandwiches-burgers-pizzas',
     price: '$6.99',
     description:
       'Grilled paneer tikka stuffed in toasted bread with sauces. Comes with Knights Fries.',
-    image: '/assets/menu/sandwiches-burgers-pizzas/2.png',
+    image: '/assets/menu/sandwiches-burgers-pizzas/2.webp',
     ingredients: [
       'Bread',
       'Paneer Tikka',
@@ -1653,12 +1653,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'tikka-sandwich-chicken',
     name: 'Tikka Sandwich (Chicken)',
-    category: 'Sandwiches • Burgers • Pizzas',
+    category: 'Sandwiches-Burgers-Pizzas',
     categoryId: 'sandwiches-burgers-pizzas',
     price: '$7.99',
     description:
       'Grilled chicken tikka stuffed in toasted bread with sauces. Comes with Knights Fries.',
-    image: '/assets/menu/sandwiches-burgers-pizzas/3.png',
+    image: '/assets/menu/sandwiches-burgers-pizzas/3.webp',
     ingredients: [
       'Bread',
       'Chicken Tikka',
@@ -1687,12 +1687,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'pesto-sandwich-veg',
     name: 'Pesto Sandwich (Veg)',
-    category: 'Sandwiches • Burgers • Pizzas',
+    category: 'Sandwiches-Burgers-Pizzas',
     categoryId: 'sandwiches-burgers-pizzas',
     price: '$6.99',
     description:
       'Herby pesto sandwich with cheese and veggies. Served with Knights Fries.',
-    image: '/assets/menu/sandwiches-burgers-pizzas/4.png',
+    image: '/assets/menu/sandwiches-burgers-pizzas/4.webp',
     ingredients: [
       'Bread',
       'Pesto Sauce',
@@ -1720,12 +1720,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'pesto-sandwich-chicken',
     name: 'Pesto Sandwich (Chicken)',
-    category: 'Sandwiches • Burgers • Pizzas',
+    category: 'Sandwiches-Burgers-Pizzas',
     categoryId: 'sandwiches-burgers-pizzas',
     price: '$7.99',
     description:
       'Chicken pesto sandwich layered with cheese and veggies. Served with Knights Fries.',
-    image: '/assets/menu/sandwiches-burgers-pizzas/5.png',
+    image: '/assets/menu/sandwiches-burgers-pizzas/5.webp',
     ingredients: [
       'Bread',
       'Pesto Sauce',
@@ -1754,12 +1754,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'veg-burger',
     name: 'Veg Burger (Aloo Tikki)',
-    category: 'Sandwiches • Burgers • Pizzas',
+    category: 'Sandwiches-Burgers-Pizzas',
     categoryId: 'sandwiches-burgers-pizzas',
     price: '$7.99',
     description:
       'Crispy aloo tikki patty burger with lettuce, onions, and sauces. Served with Knights Fries.',
-    image: '/assets/menu/sandwiches-burgers-pizzas/6.png',
+    image: '/assets/menu/sandwiches-burgers-pizzas/6.webp',
     ingredients: [
       'Burger Bun',
       'Potato Patty',
@@ -1788,12 +1788,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'chicken-burger',
     name: 'Chicken Burger',
-    category: 'Sandwiches • Burgers • Pizzas',
+    category: 'Sandwiches-Burgers-Pizzas',
     categoryId: 'sandwiches-burgers-pizzas',
     price: '$8.99',
     description:
       'Juicy chicken patty burger with lettuce, onions, and sauces. Served with Knights Fries.',
-    image: '/assets/menu/sandwiches-burgers-pizzas/7.png',
+    image: '/assets/menu/sandwiches-burgers-pizzas/7.webp',
     ingredients: [
       'Burger Bun',
       'Chicken Patty',
@@ -1825,12 +1825,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'dosa-plain',
     name: 'Dosa - Plain',
-    category: 'South Indian & Breads',
+    category: 'South indian/ Breads',
     categoryId: 'south-indian-breads',
     price: '$8.99',
     description:
       'Crispy, golden plain dosa served with sambar and chutneys.',
-    image: '/assets/menu/south-indian-breads/1.png',
+    image: '/assets/menu/south-indian-breads/1.webp',
     ingredients: ['Rice', 'Urad Dal', 'Fenugreek Seeds', 'Salt', 'Oil'],
     allergens: [],
     spiceLevel: 'Mild',
@@ -1851,12 +1851,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'dosa-masala',
     name: 'Dosa - Masala',
-    category: 'South Indian & Breads',
+    category: 'South indian/ Breads',
     categoryId: 'south-indian-breads',
     price: '$8.99',
     description:
       'Plain dosa stuffed with a spiced mashed potato filling.',
-    image: '/assets/menu/south-indian-breads/2.png',
+    image: '/assets/menu/south-indian-breads/2.webp',
     ingredients: [
       'Rice',
       'Urad Dal',
@@ -1887,12 +1887,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'dosa-mysore',
     name: 'Dosa - Mysore Masala (with potato curry)',
-    category: 'South Indian & Breads',
+    category: 'South indian/ Breads',
     categoryId: 'south-indian-breads',
     price: '$9.99',
     description:
       'Masala dosa with an added spicy Mysore chutney layer for extra kick.',
-    image: '/assets/menu/south-indian-breads/3.png',
+    image: '/assets/menu/south-indian-breads/3.webp',
     ingredients: [
       'Rice',
       'Urad Dal',
@@ -1924,12 +1924,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'dosa-chocolate',
     name: 'Dosa - Chocolate (Nutella)',
-    category: 'South Indian & Breads',
+    category: 'South indian/ Breads',
     categoryId: 'south-indian-breads',
     price: '$9.49',
     description:
       'Crispy dosa spread with chocolate hazelnut spread for a fun dessert-style twist.',
-    image: '/assets/menu/south-indian-breads/4.png',
+    image: '/assets/menu/south-indian-breads/4.webp',
     ingredients: ['Rice', 'Urad Dal', 'Nutella or Chocolate Spread', 'Oil'],
     allergens: ['Nuts'],
     spiceLevel: 'Mild',
@@ -1950,12 +1950,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'dosa-chicken',
     name: 'Dosa - Chicken',
-    category: 'South Indian & Breads',
+    category: 'South indian/ Breads',
     categoryId: 'south-indian-breads',
     price: '$11.99',
     description:
       'Crispy dosa stuffed with flavorful chicken filling and spices.',
-    image: '/assets/menu/south-indian-breads/5.png',
+    image: '/assets/menu/south-indian-breads/5.webp',
     ingredients: [
       'Rice',
       'Urad Dal',
@@ -1983,12 +1983,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'idly-2pcs',
     name: 'Idly (2 pcs)',
-    category: 'South Indian & Breads',
+    category: 'South indian/ Breads',
     categoryId: 'south-indian-breads',
     price: '$6.99',
     description:
       'Soft, steamed rice-lentil cakes served with sambar and chutneys.',
-    image: '/assets/menu/south-indian-breads/6.png',
+    image: '/assets/menu/south-indian-breads/6.webp',
     ingredients: ['Rice', 'Urad Dal', 'Fenugreek Seeds', 'Salt'],
     allergens: [],
     spiceLevel: 'Mild',
@@ -2009,12 +2009,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'butter-naan',
     name: 'Butter Naan',
-    category: 'South Indian & Breads',
+    category: 'South indian/ Breads',
     categoryId: 'south-indian-breads',
     price: '$2.49',
     description:
       'Soft, fluffy leavened bread cooked in the tandoor and brushed with butter.',
-    image: '/assets/menu/south-indian-breads/7.png',
+    image: '/assets/menu/south-indian-breads/7.webp',
     ingredients: ['All-Purpose Flour', 'Yogurt', 'Yeast', 'Butter', 'Salt', 'Sugar'],
     allergens: ['Gluten', 'Dairy'],
     spiceLevel: 'Mild',
@@ -2035,12 +2035,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'garlic-naan',
     name: 'Garlic Naan',
-    category: 'South Indian & Breads',
+    category: 'South indian/ Breads',
     categoryId: 'south-indian-breads',
     price: '$2.99',
     description:
       'Tandoor-baked naan topped with fresh garlic and herbs, brushed with butter.',
-    image: '/assets/menu/south-indian-breads/8.png',
+    image: '/assets/menu/south-indian-breads/8.webp',
     ingredients: [
       'All-Purpose Flour',
       'Yogurt',
@@ -2070,12 +2070,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'chapati-3pcs',
     name: 'Chapati (3 pcs)',
-    category: 'South Indian & Breads',
+    category: 'South indian/ Breads',
     categoryId: 'south-indian-breads',
     price: '$4.99',
     description:
       'Soft, whole-wheat flatbreads cooked on a tawa. Lighter than naan.',
-    image: '/assets/menu/south-indian-breads/9.png',
+    image: '/assets/menu/south-indian-breads/9.webp',
     ingredients: ['Whole Wheat Flour', 'Water', 'Salt'],
     allergens: ['Gluten'],
     spiceLevel: 'Mild',
@@ -2096,12 +2096,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'parotta-2pcs',
     name: 'Parotta (2 pcs)',
-    category: 'South Indian & Breads',
+    category: 'South indian/ Breads',
     categoryId: 'south-indian-breads',
     price: '$4.99',
     description:
       'Flaky, layered South Indian style parotta – slightly crispy and very satisfying.',
-    image: '/assets/menu/south-indian-breads/10.png',
+    image: '/assets/menu/south-indian-breads/10.webp',
     ingredients: ['All-Purpose Flour', 'Oil', 'Salt', 'Water'],
     allergens: ['Gluten'],
     spiceLevel: 'Mild',
@@ -2126,12 +2126,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'gajar-halwa',
     name: 'Gajar Halwa (Carrot)',
-    category: 'Desserts & Drinks',
+    category: 'Desserts/Drinks',
     categoryId: 'desserts-drinks',
     price: '$4.49',
     description:
       'Slow-cooked grated carrots simmered with milk, ghee, and sugar, garnished with nuts.',
-    image: '/assets/menu/desserts-drinks/1.png',
+    image: '/assets/menu/desserts-drinks/1.webp',
     ingredients: ['Carrots', 'Milk', 'Sugar', 'Ghee', 'Cardamom', 'Nuts'],
     allergens: ['Dairy', 'Nuts'],
     spiceLevel: 'Mild',
@@ -2152,12 +2152,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'rice-pudding',
     name: 'Rice Pudding',
-    category: 'Desserts & Drinks',
+    category: 'Desserts/Drinks',
     categoryId: 'desserts-drinks',
     price: '$3.49',
     description:
       'Creamy Indian-style kheer made with rice, milk, sugar, and cardamom.',
-    image: '/assets/menu/desserts-drinks/2.png',
+    image: '/assets/menu/desserts-drinks/2.webp',
     ingredients: ['Rice', 'Milk', 'Sugar', 'Cardamom', 'Nuts (optional)'],
     allergens: ['Dairy'],
     spiceLevel: 'Mild',
@@ -2178,14 +2178,14 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'gulab-jamun-2pcs',
     name: 'Gulab Jamun (2 pcs)',
-    category: 'Desserts & Drinks',
+    category: 'Desserts/Drinks',
     categoryId: 'desserts-drinks',
     price: '$3.99',
     isLateNightSpecial: true,
     lateNightDisplayName: 'Gulab Jamun Dessert Cup',
     description:
       'Soft, deep-fried milk dumplings soaked in warm rose-cardamom sugar syrup.',
-    image: '/assets/menu/desserts-drinks/3.png',
+    image: '/assets/menu/desserts-drinks/3.webp',
     ingredients: [
       'Milk Powder',
       'All-Purpose Flour',
@@ -2215,12 +2215,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'rasmalai-2pcs',
     name: 'Rasmalai (2 pcs)',
-    category: 'Desserts & Drinks',
+    category: 'Desserts/Drinks',
     categoryId: 'desserts-drinks',
     price: '$4.49',
     description:
       'Soft paneer patties soaked in sweet, thickened milk flavored with cardamom and saffron.',
-    image: '/assets/menu/desserts-drinks/4.png',
+    image: '/assets/menu/desserts-drinks/4.webp',
     ingredients: ['Paneer', 'Milk', 'Sugar', 'Cardamom', 'Saffron', 'Nuts'],
     allergens: ['Dairy', 'Nuts'],
     spiceLevel: 'Mild',
@@ -2241,13 +2241,13 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'mango-lassi',
     name: 'Mango Lassi',
-    category: 'Desserts & Drinks',
+    category: 'Desserts/Drinks',
     categoryId: 'desserts-drinks',
     price: '$4.59',
     isLateNightSpecial: true,
     description:
       'Sweet, creamy yogurt drink blended with mango pulp – chilled and refreshing.',
-    image: '/assets/menu/desserts-drinks/5.png',
+    image: '/assets/menu/desserts-drinks/5.webp',
     ingredients: ['Yogurt', 'Mango Pulp', 'Sugar', 'Cardamom', 'Ice'],
     allergens: ['Dairy'],
     spiceLevel: 'Mild',
@@ -2268,12 +2268,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'lassi',
     name: 'Lassi (Salt / Sugar)',
-    category: 'Desserts & Drinks',
+    category: 'Desserts/Drinks',
     categoryId: 'desserts-drinks',
     price: '$3.49',
     description:
       'Traditional yogurt-based drink served either sweet or salted with roasted cumin.',
-    image: '/assets/menu/desserts-drinks/6.png',
+    image: '/assets/menu/desserts-drinks/6.webp',
     ingredients: ['Yogurt', 'Water', 'Sugar or Salt', 'Cumin (for salted)', 'Ice'],
     allergens: ['Dairy'],
     spiceLevel: 'Mild',
@@ -2294,12 +2294,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'masala-chai',
     name: 'Masala Chai',
-    category: 'Desserts & Drinks',
+    category: 'Desserts/Drinks',
     categoryId: 'desserts-drinks',
     price: '$3.49',
     description:
       'Indian spiced tea brewed with milk, sugar, and a warming spice blend.',
-    image: '/assets/menu/desserts-drinks/7.png',
+    image: '/assets/menu/desserts-drinks/7.webp',
     ingredients: [
       'Black Tea',
       'Milk',
@@ -2329,12 +2329,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'indian-coffee',
     name: 'Indian Coffee',
-    category: 'Desserts & Drinks',
+    category: 'Desserts/Drinks',
     categoryId: 'desserts-drinks',
     price: '$3.99',
     description:
       'Strong, frothy Indian-style filter coffee with milk and sugar.',
-    image: '/assets/menu/desserts-drinks/8.png',
+    image: '/assets/menu/desserts-drinks/8.webp',
     ingredients: ['Coffee', 'Milk', 'Sugar'],
     allergens: ['Dairy'],
     spiceLevel: 'Mild',
@@ -2355,12 +2355,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'iced-tea',
     name: 'Iced Tea',
-    category: 'Desserts & Drinks',
+    category: 'Desserts/Drinks',
     categoryId: 'desserts-drinks',
     price: '$2.49',
     description:
       'Chilled black tea with lemon and a hint of sweetness, served over ice.',
-    image: '/assets/menu/desserts-drinks/9.png',
+    image: '/assets/menu/desserts-drinks/9.webp',
     ingredients: ['Black Tea', 'Ice', 'Lemon', 'Sugar', 'Mint'],
     allergens: [],
     spiceLevel: 'Mild',
@@ -2381,12 +2381,12 @@ export const menuItemDetails: MenuItemDetail[] = [
   {
     id: 'sodas',
     name: 'Sodas (Cans / Bottles)',
-    category: 'Desserts & Drinks',
+    category: 'Desserts/Drinks',
     categoryId: 'desserts-drinks',
     price: '$0.99 (Cans) / $2.49 (Bottles)',
     description:
       'Assorted chilled soft drinks available in cans or bottles.',
-    image: '/assets/menu/desserts-drinks/10.png',
+    image: '/assets/menu/desserts-drinks/10.webp',
     ingredients: ['Carbonated Water', 'Sugar', 'Natural Flavors', 'Citric Acid'],
     allergens: [],
     spiceLevel: 'Mild',
