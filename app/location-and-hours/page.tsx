@@ -186,7 +186,7 @@ export default function LocationAndHoursPage() {
                       </li>
                       <li className="flex items-center justify-between py-2">
                         <span className="font-bold text-base sm:text-lg text-neutral-900">Sunday</span>
-                        <span className="text-base sm:text-lg text-neutral-700">11:00 AM – 1:00 AM</span>
+                        <span className="text-base sm:text-lg text-neutral-700">11:00 AM – 11:00 PM</span>
                       </li>
                     </ul>
                   </div>

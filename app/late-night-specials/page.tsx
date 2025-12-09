@@ -70,7 +70,7 @@ export default function LateNightSpecialsPage() {
                 
                 {/* Hours Grid - 2x2 Layout */}
                 <div className="grid grid-cols-2 md:grid-cols-2 gap-3 sm:gap-4 md:gap-6 mb-4">
-                  {/* Sunday - Thursday: 11pm-1:30am */}
+                  {/* Monday - Thursday: 11pm-1:30am */}
                   <div 
                     className="group flex flex-col items-center gap-1.5 sm:gap-2 md:gap-3 rounded-lg sm:rounded-xl p-2.5 sm:p-3 md:p-4 lg:p-5 border-2 relative overflow-hidden transition-all duration-300 hover:scale-[1.02]"
                     style={{
@@ -156,7 +156,7 @@ export default function LateNightSpecialsPage() {
                     
                     {/* Content */}
                     <div className="text-center z-10 space-y-1 sm:space-y-1.5 md:space-y-2">
-                      <p className="font-bold text-yellow-50 text-xs sm:text-sm md:text-lg lg:text-xl tracking-tight leading-tight">Sunday – Thursday</p>
+                      <p className="font-bold text-yellow-50 text-xs sm:text-sm md:text-lg lg:text-xl tracking-tight leading-tight">Monday – Thursday</p>
                       <p className="text-primary font-black text-sm sm:text-base md:text-xl lg:text-2xl tracking-tight leading-tight" style={{ textShadow: '0 0 12px rgba(220, 38, 38, 0.5)' }}>11:00 PM – 1:00 AM</p>
                       <p className="text-[10px] sm:text-xs md:text-sm text-slate-300 font-medium">Late Night Specials</p>
                     </div>
