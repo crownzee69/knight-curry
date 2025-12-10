@@ -41,9 +41,7 @@ const NavItem = memo(({
       </div>
       {/* Label */}
       <span
-        className={`text-[11px] font-medium transition-all duration-300 ${
-          isActive ? 'text-red-600' : 'text-gray-500'
-        }`}
+        className={`text-[11px] font-medium transition-all duration-300 text-white`}
       >
         {item.label}
       </span>
