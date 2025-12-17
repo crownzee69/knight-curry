@@ -4,7 +4,6 @@ import HomepageBackground from '@/components/HomepageBackground';
 
 const Menu = dynamic(() => import('@/components/Menu'), {
   loading: () => <div style={{ minHeight: '400px' }} />,
-  ssr: false,
 });
 
 export default async function MenuCategoryPage({
