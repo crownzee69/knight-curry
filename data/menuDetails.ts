@@ -44,7 +44,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     lateNightDisplayName: "Knight's Signature Platters",
     description:
       'Create your own veg feast! Pick any two vegetarian curries, served with fragrant rice, warm naan, and a sweet Gulab Jamun.',
-    image: '/assets/menu/platters/1.webp',
+    image: '/assets/menu/platters/6.webp',
     ingredients: [
       'Basmati Rice',
       'Naan',
@@ -78,7 +78,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     price: '$12.99',
     description:
       'Best of both worlds! One vegetarian curry and one chicken curry, with rice, naan, and Gulab Jamun.',
-    image: '/assets/menu/platters/2.webp',
+    image: '/assets/menu/platters/7.webp',
     ingredients: [
       'Basmati Rice',
       'Naan',
@@ -111,7 +111,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     price: '$13.99',
     description:
       'Double the chicken, double the flavor! Choose any two chicken curries with rice, naan, and Gulab Jamun.',
-    image: '/assets/menu/platters/3.webp',
+    image: '/assets/menu/platters/8.webp',
     ingredients: [
       'Basmati Rice',
       'Naan',
@@ -142,7 +142,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     price: '$14.99',
     description:
       'Upgrade to lamb! One luxurious lamb curry plus any second curry of your choice, served with rice, naan, and dessert.',
-    image: '/assets/menu/platters/4.webp',
+    image: '/assets/menu/platters/9.webp',
     ingredients: [
       'Basmati Rice',
       'Naan',
@@ -174,7 +174,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     price: '$16.99',
     description:
       'Pure lamb luxury – two portions of rich lamb curry, plus rice, naan, and Gulab Jamun.',
-    image: '/assets/menu/platters/5.webp',
+    image: '/assets/menu/platters/10.webp',
     ingredients: [
       'Basmati Rice',
       'Naan',
