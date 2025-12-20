@@ -33,7 +33,7 @@ export default function ModifiersSelector({ modifiers }: ModifiersSelectorProps)
   }
 
   return (
-    <div className="bg-gradient-to-br from-blue-50/90 via-indigo-50/80 to-purple-50/90 p-5 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl shadow-md border border-primary/20 animate-fadeInUp">
+    <div className="bg-gradient-to-br from-amber-50/90 via-orange-50/80 to-red-50/90 p-5 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl shadow-md border border-primary/20 animate-fadeInUp">
       <h3 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-neutral-900 mb-4 sm:mb-6">
         Customize Your Order
       </h3>
