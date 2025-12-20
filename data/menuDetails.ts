@@ -26,6 +26,11 @@ export interface MenuItemDetail {
   isLateNightSpecial?: boolean; // Mark items as late night specials
   lateNightDisplayName?: string; // Optional custom name for late night page
   perfectFor?: string; // "Perfect for:" description line
+  modifiers?: {
+    name: string;
+    options: string[];
+    default?: string;
+  }[];
 }
 
 const DEFAULT_IMAGE = '/assets/category/4.webp';
@@ -1588,7 +1593,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     categoryId: 'sandwiches-burgers-pizzas',
     price: '$6.99',
     description:
-      'Layered sandwich stuffed with fresh veggies, spreads, and toasted bread. Served with Knights Fries.',
+      'Layered sandwich stuffed with fresh veggies, spreads, and toasted bread. Served with a side of Knights Fries or Chips.',
     image: '/assets/menu/sandwiches-burgers-pizzas/2.webp',
     ingredients: [
       'Bread',
@@ -1603,7 +1608,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     allergens: ['Gluten', 'Dairy'],
     spiceLevel: 'Mild',
     preparationTime: '10-15 minutes',
-    servingSize: '1 Sandwich + Fries',
+    servingSize: '1 Sandwich + Side',
     calories: '500-600 cal',
     nutritionalInfo: {
       protein: '14-18g',
@@ -1614,7 +1619,19 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Vegetarian'],
     dietaryInfo: ['Vegetarian', 'Contains Gluten', 'Contains Dairy'],
     chefNotes: 'Classic layered club, desi style.',
-    perfectFor: 'Quick lunch with a side of fries.',
+    perfectFor: 'Quick lunch with a customizable side.',
+    modifiers: [
+      {
+        name: 'Bread Type',
+        options: ['White Bread', 'Whole Wheat Bread'],
+        default: 'White Bread',
+      },
+      {
+        name: 'Side',
+        options: ['Fries', 'Chips'],
+        default: 'Fries',
+      },
+    ],
   },
   {
     id: 'tikka-sandwich-veg',
@@ -1623,7 +1640,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     categoryId: 'sandwiches-burgers-pizzas',
     price: '$6.99',
     description:
-      'Grilled paneer tikka stuffed in toasted bread with sauces. Comes with Knights Fries.',
+      'Grilled paneer tikka stuffed in toasted bread with sauces. Comes with a side of Knights Fries or Chips.',
     image: '/assets/menu/sandwiches-burgers-pizzas/2.webp',
     ingredients: [
       'Bread',
@@ -1637,7 +1654,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     allergens: ['Gluten', 'Dairy'],
     spiceLevel: 'Medium',
     preparationTime: '12-15 minutes',
-    servingSize: '1 Sandwich + Fries',
+    servingSize: '1 Sandwich + Side',
     calories: '520-650 cal',
     nutritionalInfo: {
       protein: '16-20g',
@@ -1649,6 +1666,18 @@ export const menuItemDetails: MenuItemDetail[] = [
     dietaryInfo: ['Vegetarian', 'Contains Gluten', 'Contains Dairy'],
     chefNotes: 'Classic paneer tikka filling – flavorful and hearty.',
     perfectFor: 'Hearty snack or light meal.',
+    modifiers: [
+      {
+        name: 'Bread Type',
+        options: ['White Bread', 'Whole Wheat Bread'],
+        default: 'White Bread',
+      },
+      {
+        name: 'Side',
+        options: ['Fries', 'Chips'],
+        default: 'Fries',
+      },
+    ],
   },
   {
     id: 'tikka-sandwich-chicken',
@@ -1657,7 +1686,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     categoryId: 'sandwiches-burgers-pizzas',
     price: '$7.99',
     description:
-      'Grilled chicken tikka stuffed in toasted bread with sauces. Comes with Knights Fries.',
+      'Grilled chicken tikka stuffed in toasted bread with sauces. Comes with a side of Knights Fries or Chips.',
     image: '/assets/menu/sandwiches-burgers-pizzas/3.webp',
     ingredients: [
       'Bread',
@@ -1671,7 +1700,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     allergens: ['Gluten', 'Dairy'],
     spiceLevel: 'Medium',
     preparationTime: '12-15 minutes',
-    servingSize: '1 Sandwich + Fries',
+    servingSize: '1 Sandwich + Side',
     calories: '550-680 cal',
     nutritionalInfo: {
       protein: '22-28g',
@@ -1683,6 +1712,18 @@ export const menuItemDetails: MenuItemDetail[] = [
     dietaryInfo: ['Contains Gluten', 'Contains Dairy'],
     chefNotes: 'Juicy and smoky chicken tikka makes it a customer favorite.',
     perfectFor: 'Protein-packed meal or snack.',
+    modifiers: [
+      {
+        name: 'Bread Type',
+        options: ['White Bread', 'Whole Wheat Bread'],
+        default: 'White Bread',
+      },
+      {
+        name: 'Side',
+        options: ['Fries', 'Chips'],
+        default: 'Fries',
+      },
+    ],
   },
   {
     id: 'pesto-sandwich-veg',
@@ -1691,7 +1732,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     categoryId: 'sandwiches-burgers-pizzas',
     price: '$6.99',
     description:
-      'Herby pesto sandwich with cheese and veggies. Served with Knights Fries.',
+      'Herby pesto sandwich with cheese and veggies. Served with a side of Knights Fries or Chips.',
     image: '/assets/menu/sandwiches-burgers-pizzas/4.webp',
     ingredients: [
       'Bread',
@@ -1704,7 +1745,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     allergens: ['Gluten', 'Dairy', 'Nuts (in pesto)'],
     spiceLevel: 'Mild',
     preparationTime: '12-15 minutes',
-    servingSize: '1 Sandwich + Fries',
+    servingSize: '1 Sandwich + Side',
     calories: '520-650 cal',
     nutritionalInfo: {
       protein: '16-20g',
@@ -1716,6 +1757,18 @@ export const menuItemDetails: MenuItemDetail[] = [
     dietaryInfo: ['Vegetarian', 'Contains Gluten', 'Contains Dairy', 'Contains Nuts'],
     chefNotes: 'Italian flavors meet Indian café vibes.',
     perfectFor: 'A light but flavorful meal.',
+    modifiers: [
+      {
+        name: 'Bread Type',
+        options: ['White Bread', 'Whole Wheat Bread'],
+        default: 'White Bread',
+      },
+      {
+        name: 'Side',
+        options: ['Fries', 'Chips'],
+        default: 'Fries',
+      },
+    ],
   },
   {
     id: 'pesto-sandwich-chicken',
@@ -1724,7 +1777,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     categoryId: 'sandwiches-burgers-pizzas',
     price: '$7.99',
     description:
-      'Chicken pesto sandwich layered with cheese and veggies. Served with Knights Fries.',
+      'Chicken pesto sandwich layered with cheese and veggies. Served with a side of Knights Fries or Chips.',
     image: '/assets/menu/sandwiches-burgers-pizzas/5.webp',
     ingredients: [
       'Bread',
@@ -1738,7 +1791,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     allergens: ['Gluten', 'Dairy', 'Nuts (in pesto)'],
     spiceLevel: 'Mild',
     preparationTime: '12-15 minutes',
-    servingSize: '1 Sandwich + Fries',
+    servingSize: '1 Sandwich + Side',
     calories: '560-700 cal',
     nutritionalInfo: {
       protein: '22-28g',
@@ -1750,6 +1803,18 @@ export const menuItemDetails: MenuItemDetail[] = [
     dietaryInfo: ['Contains Gluten', 'Contains Dairy', 'Contains Nuts'],
     chefNotes: 'Chicken adds extra richness and protein.',
     perfectFor: 'A balanced and filling meal.',
+    modifiers: [
+      {
+        name: 'Bread Type',
+        options: ['White Bread', 'Whole Wheat Bread'],
+        default: 'White Bread',
+      },
+      {
+        name: 'Side',
+        options: ['Fries', 'Chips'],
+        default: 'Fries',
+      },
+    ],
   },
   {
     id: 'veg-burger',
@@ -1758,7 +1823,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     categoryId: 'sandwiches-burgers-pizzas',
     price: '$7.99',
     description:
-      'Crispy aloo tikki patty burger with lettuce, onions, and sauces. Served with Knights Fries.',
+      'Crispy aloo tikki patty burger with lettuce, onions, and sauces. Served with a side of Knights Fries or Chips.',
     image: '/assets/menu/sandwiches-burgers-pizzas/6.webp',
     ingredients: [
       'Burger Bun',
@@ -1772,7 +1837,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     allergens: ['Gluten'],
     spiceLevel: 'Mild',
     preparationTime: '10-15 minutes',
-    servingSize: '1 Burger + Fries',
+    servingSize: '1 Burger + Side',
     calories: '600-700 cal',
     nutritionalInfo: {
       protein: '10-12g',
@@ -1784,6 +1849,13 @@ export const menuItemDetails: MenuItemDetail[] = [
     dietaryInfo: ['Vegetarian', 'Contains Gluten'],
     chefNotes: 'Classic Indian-style aloo tikki burger.',
     perfectFor: 'Burger cravings without meat.',
+    modifiers: [
+      {
+        name: 'Side',
+        options: ['Fries', 'Chips'],
+        default: 'Fries',
+      },
+    ],
   },
   {
     id: 'chicken-burger',
@@ -1792,7 +1864,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     categoryId: 'sandwiches-burgers-pizzas',
     price: '$8.99',
     description:
-      'Juicy chicken patty burger with lettuce, onions, and sauces. Served with Knights Fries.',
+      'Juicy chicken patty burger with lettuce, onions, and sauces. Served with a side of Knights Fries or Chips.',
     image: '/assets/menu/sandwiches-burgers-pizzas/7.webp',
     ingredients: [
       'Burger Bun',
@@ -1805,7 +1877,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     allergens: ['Gluten'],
     spiceLevel: 'Mild',
     preparationTime: '10-15 minutes',
-    servingSize: '1 Burger + Fries',
+    servingSize: '1 Burger + Side',
     calories: '650-750 cal',
     nutritionalInfo: {
       protein: '22-28g',
@@ -1815,8 +1887,15 @@ export const menuItemDetails: MenuItemDetail[] = [
     },
     tags: ['Non-Vegetarian'],
     dietaryInfo: ['Contains Gluten'],
-    chefNotes: 'Simple, filling, and comes with masala fries.',
+    chefNotes: 'Simple, filling, and comes with a side of fries or chips.',
     perfectFor: 'Casual meal any time of day.',
+    modifiers: [
+      {
+        name: 'Side',
+        options: ['Fries', 'Chips'],
+        default: 'Fries',
+      },
+    ],
   },
 
   // ─────────────────────────────

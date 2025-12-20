@@ -400,7 +400,7 @@ function Menu({ initialCategory }: { initialCategory?: string }) {
                     <div className="flex items-center gap-3">
                       <ion-icon name="information-circle" className="text-orange-600 text-2xl sm:text-3xl flex-shrink-0"></ion-icon>
                       <p className="text-sm sm:text-base font-semibold text-orange-800 whitespace-nowrap flex items-center gap-2">
-                        All of these comes with side of Knights Fries. 🍟
+                        All of these come with a side of Knights Fries 🍟 or Chips 🥔.
                       </p>
                     </div>
                   </div>

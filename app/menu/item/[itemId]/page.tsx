@@ -7,6 +7,7 @@ import HomepageBackground from '@/components/HomepageBackground';
 import BackButton from '@/components/BackButton';
 import IngredientsList from '@/components/IngredientsList';
 import OrderNowButton from '@/components/OrderNowButton';
+import ModifiersSelector from '@/components/ModifiersSelector';
 
 export async function generateStaticParams() {
   return menuItemDetails.map((item) => ({
@@ -132,6 +133,13 @@ export default async function MenuItemDetailPage({ params }: { params: Promise<{
                     {item.description}
                   </p>
                 </div>
+
+                {/* Modifiers */}
+                {item.modifiers && item.modifiers.length > 0 && (
+                  <div style={{ animationDelay: '0.15s' }}>
+                    <ModifiersSelector modifiers={item.modifiers} />
+                  </div>
+                )}
 
                 {/* Chef Notes */}
                 {item.chefNotes && (
