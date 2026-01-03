@@ -77,40 +77,47 @@ export default function RootLayout({
           strategy="lazyOnload"
           defer
         />
-        {/* Service Worker Registration */}
+        {/* Service Worker Registration - Register early for better caching */}
         <Script
           id="sw-register"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               if ('serviceWorker' in navigator) {
-                window.addEventListener('load', () => {
-                  navigator.serviceWorker.register('/sw.js')
-                    .then((registration) => {
-                      console.log('Service Worker registered:', registration.scope);
-                      
-                      // Check for updates periodically
-                      setInterval(() => {
-                        registration.update();
-                      }, 60 * 60 * 1000); // Check every hour
-                      
-                      // Handle updates
-                      registration.addEventListener('updatefound', () => {
-                        const newWorker = registration.installing;
-                        if (newWorker) {
-                          newWorker.addEventListener('statechange', () => {
-                            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                              // New service worker available, reload to activate
-                              console.log('New service worker available. Reload to update.');
-                            }
-                          });
-                        }
-                      });
-                    })
-                    .catch((error) => {
-                      console.log('Service Worker registration failed:', error);
+                // Register immediately, don't wait for load event
+                navigator.serviceWorker.register('/sw.js', { scope: '/' })
+                  .then((registration) => {
+                    console.log('Service Worker registered:', registration.scope);
+                    
+                    // Ensure service worker is active
+                    if (registration.installing) {
+                      console.log('Service Worker installing...');
+                    } else if (registration.waiting) {
+                      console.log('Service Worker waiting...');
+                    } else if (registration.active) {
+                      console.log('Service Worker active');
+                    }
+                    
+                    // Check for updates periodically
+                    setInterval(() => {
+                      registration.update();
+                    }, 60 * 60 * 1000); // Check every hour
+                    
+                    // Handle updates
+                    registration.addEventListener('updatefound', () => {
+                      const newWorker = registration.installing;
+                      if (newWorker) {
+                        newWorker.addEventListener('statechange', () => {
+                          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                            console.log('New service worker available. Reload to update.');
+                          }
+                        });
+                      }
                     });
-                });
+                  })
+                  .catch((error) => {
+                    console.error('Service Worker registration failed:', error);
+                  });
               }
             `,
           }}

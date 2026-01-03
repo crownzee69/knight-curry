@@ -1,7 +1,7 @@
 // Service Worker for caching images and data
-const CACHE_NAME = 'knight-curry-v2';
-const IMAGE_CACHE = 'knight-curry-images-v2';
-const DATA_CACHE = 'knight-curry-data-v2';
+const CACHE_NAME = 'knight-curry-v3';
+const IMAGE_CACHE = 'knight-curry-images-v3';
+const DATA_CACHE = 'knight-curry-data-v3';
 
 // Assets to cache on install
 const STATIC_ASSETS = [
@@ -18,9 +18,13 @@ const IMAGE_EXTENSIONS = /\.(jpg|jpeg|png|webp|gif|svg|ico)$/i;
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(STATIC_ASSETS);
+      return cache.addAll(STATIC_ASSETS).catch((err) => {
+        console.log('Failed to cache some static assets:', err);
+        // Continue even if some assets fail to cache
+      });
     })
   );
+  // Force activation immediately
   self.skipWaiting();
 });
 
@@ -35,13 +39,16 @@ self.addEventListener('activate', (event) => {
             cacheName !== IMAGE_CACHE &&
             cacheName !== DATA_CACHE
           ) {
+            console.log('Deleting old cache:', cacheName);
             return caches.delete(cacheName);
           }
         })
       );
+    }).then(() => {
+      // Take control of all pages immediately
+      return self.clients.claim();
     })
   );
-  self.clients.claim();
 });
 
 // Fetch event - serve from cache, fallback to network
@@ -56,11 +63,12 @@ self.addEventListener('fetch', (event) => {
 
   // Handle image requests - comprehensive image caching
   // Check multiple conditions to catch all image requests
+  const acceptHeader = request.headers.get('accept') || '';
   const isImageRequest = 
     request.destination === 'image' || 
     IMAGE_EXTENSIONS.test(url.pathname) ||
     url.pathname.startsWith('/assets/') ||
-    (request.headers.get('accept') && request.headers.get('accept').includes('image/'));
+    acceptHeader.includes('image/');
 
   if (isImageRequest) {
     event.respondWith(
@@ -68,22 +76,8 @@ self.addEventListener('fetch', (event) => {
         return cache.match(request).then((cachedResponse) => {
           if (cachedResponse) {
             // Return cached image immediately (fastest response)
-            // Update cache in background (stale-while-revalidate pattern)
-            // This ensures users see images instantly while cache stays fresh
-            fetch(request)
-              .then((networkResponse) => {
-                if (networkResponse.ok && networkResponse.status === 200) {
-                  // Only update if response is valid and different
-                  const cacheControl = networkResponse.headers.get('cache-control');
-                  // Respect immutable cache headers from server
-                  if (!cacheControl || !cacheControl.includes('immutable')) {
-                    cache.put(request, networkResponse.clone());
-                  }
-                }
-              })
-              .catch(() => {
-                // Network failed, keep using cached version (offline support)
-              });
+            // For immutable resources, browser cache is enough, but we still serve from SW cache
+            // This provides offline support and faster loading
             return cachedResponse;
           }
           // Not in cache, fetch from network and cache
@@ -91,7 +85,8 @@ self.addEventListener('fetch', (event) => {
             if (networkResponse.ok && networkResponse.status === 200) {
               // Clone response before caching (response can only be consumed once)
               const responseToCache = networkResponse.clone();
-              // Cache the response for future use
+              // Always cache in service worker for offline support
+              // Even if server says immutable, we cache it for offline access
               cache.put(request, responseToCache);
             }
             return networkResponse;
