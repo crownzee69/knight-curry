@@ -64,9 +64,12 @@ export default function LateNightSpecialsPage() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full transform translate-x-8 -translate-y-8"></div>
               
               <div className="relative z-10">
-                <h3 className="text-2xl sm:text-3xl font-display font-black text-neutral-900 mb-4 text-center">
+                <h3 className="text-2xl sm:text-3xl font-display font-black text-neutral-900 mb-2 text-center">
                   Late Night Hours
                 </h3>
+                <p className="text-sm sm:text-base text-neutral-700 mb-4 text-center italic">
+                  (we also serve full menu during this time)
+                </p>
                 
                 {/* Hours Grid - 2x2 Layout */}
                 <div className="grid grid-cols-2 md:grid-cols-2 gap-3 sm:gap-4 md:gap-6 mb-4">
@@ -255,9 +258,32 @@ export default function LateNightSpecialsPage() {
                   </div>
                 </div>
                 
-                {/* <p className="text-sm text-neutral-600 text-center italic pt-4 border-t border-neutral-200/50">
-                  Walk in grad a table.
-                </p> */}
+                {/* How to Order - Three bullet points */}
+                <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-neutral-200/50">
+                  <ul className="space-y-3 sm:space-y-4">
+                    <li className="flex items-baseline gap-3">
+                      <span className="text-primary text-xl font-bold leading-none">•</span>
+                      <div className="flex-1">
+                        <strong className="text-neutral-900 font-bold text-base sm:text-lg">Dine-In:</strong>
+                        <span className="text-neutral-700 ml-2">Walk in, grab a table.</span>
+                      </div>
+                    </li>
+                    <li className="flex items-baseline gap-3">
+                      <span className="text-primary text-xl font-bold leading-none">•</span>
+                      <div className="flex-1">
+                        <strong className="text-neutral-900 font-bold text-base sm:text-lg">Takeout:</strong>
+                        <span className="text-neutral-700 ml-2">Order at the counter or call ahead.</span>
+                      </div>
+                    </li>
+                    <li className="flex items-baseline gap-3">
+                      <span className="text-primary text-xl font-bold leading-none">•</span>
+                      <div className="flex-1">
+                        <strong className="text-neutral-900 font-bold text-base sm:text-lg">Delivery:</strong>
+                        <span className="text-neutral-700 ml-2">Available on major apps.</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -398,46 +424,6 @@ export default function LateNightSpecialsPage() {
               <p className="text-sm sm:text-base text-neutral-800 text-center leading-relaxed">
                 Many of our items contain or may come into contact with common allergens such as dairy, nuts, wheat, soy, eggs, and sesame. Ingredients can change and cross-contact may occur. Please read menu descriptions carefully and speak with a team member about your allergies before placing your order.
               </p>
-            </div>
-          </div>
-        </section>
-
-        {/* How Late Night Ordering Works */}
-        <section className="py-6 sm:py-8">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div 
-              className="p-6 sm:p-8 rounded-xl border"
-              style={{
-                background: 'linear-gradient(135deg, rgba(255, 248, 240, 0.95) 0%, rgba(250, 240, 230, 0.92) 100%)',
-                borderColor: 'rgba(220, 38, 38, 0.15)',
-              }}
-            >
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-black text-neutral-900 mb-4 text-center">
-              How to Order Late Night
-            </h2>
-              <ul className="space-y-3 sm:space-y-4">
-                <li className="flex items-baseline gap-3">
-                  <span className="text-primary text-xl font-bold leading-none">•</span>
-                  <div className="flex-1">
-                    <strong className="text-neutral-900 font-bold text-base sm:text-lg">Dine-In:</strong>
-                    <span className="text-neutral-700 ml-2">Walk in, grab a table.</span>
-                  </div>
-                </li>
-                <li className="flex items-baseline gap-3">
-                  <span className="text-primary text-xl font-bold leading-none">•</span>
-                  <div className="flex-1">
-                    <strong className="text-neutral-900 font-bold text-base sm:text-lg">Takeout:</strong>
-                    <span className="text-neutral-700 ml-2">Order at the counter or call ahead.</span>
-                  </div>
-                </li>
-                <li className="flex items-baseline gap-3">
-                  <span className="text-primary text-xl font-bold leading-none">•</span>
-                  <div className="flex-1">
-                    <strong className="text-neutral-900 font-bold text-base sm:text-lg">Delivery:</strong>
-                    <span className="text-neutral-700 ml-2">Available on major apps.</span>
-                  </div>
-                </li>
-              </ul>
             </div>
           </div>
         </section>

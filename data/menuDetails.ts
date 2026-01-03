@@ -321,6 +321,13 @@ export const menuItemDetails: MenuItemDetail[] = [
     dietaryInfo: ['Vegetarian option available', 'Contains Dairy', 'Contains Soy', 'Contains Gluten'],
     chefNotes: 'Served with mint chutney and lemon wedges. Choose paneer for vegetarian or chicken for non-vegetarian.',
     perfectFor: 'When you want something spicy, tangy, and Indo-Chinese style.',
+    modifiers: [
+      {
+        name: 'Spice Level',
+        options: ['Mild', 'Medium', 'Hot'],
+        default: 'Hot',
+      },
+    ],
   },
   {
     id: 'chicken-65',
@@ -359,6 +366,13 @@ export const menuItemDetails: MenuItemDetail[] = [
     dietaryInfo: ['Contains Dairy'],
     chefNotes: 'Crispy outside, juicy inside, with a serious chili kick.',
     perfectFor: 'Spice lovers and snack monsters.',
+    modifiers: [
+      {
+        name: 'Spice Level',
+        options: ['Mild', 'Medium', 'Hot'],
+        default: 'Hot',
+      },
+    ],
   },
   {
     id: 'ginger-chicken',
@@ -395,7 +409,14 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Indo-Chinese', 'Non-Vegetarian'],
     dietaryInfo: ['Contains Gluten', 'Contains Soy'],
     chefNotes: 'Bright ginger flavor makes this super addictive.',
-    perfectFor: 'When you’re in the mood for Indo-Chinese bar snacks.',
+    perfectFor: "When you're in the mood for Indo-Chinese bar snacks.",
+    modifiers: [
+      {
+        name: 'Spice Level',
+        options: ['Mild', 'Medium', 'Hot'],
+        default: 'Medium',
+      },
+    ],
   },
   {
     id: 'veg-manchurian',
@@ -433,6 +454,13 @@ export const menuItemDetails: MenuItemDetail[] = [
     dietaryInfo: ['Vegetarian', 'Contains Gluten', 'Contains Soy'],
     chefNotes: 'Choose dry or gravy style depending on your mood.',
     perfectFor: 'Sharing as a starter with friends.',
+    modifiers: [
+      {
+        name: 'Spice Level',
+        options: ['Mild', 'Medium', 'Hot'],
+        default: 'Medium',
+      },
+    ],
   },
   {
     id: 'knights-fries',
@@ -507,6 +535,13 @@ export const menuItemDetails: MenuItemDetail[] = [
     dietaryInfo: ['Vegetarian', 'Contains Gluten', 'Contains Soy'],
     chefNotes: 'A must-try classic of Indo-Chinese cuisine.',
     perfectFor: 'When you want something crispy, saucy, and bold.',
+    modifiers: [
+      {
+        name: 'Spice Level',
+        options: ['Mild', 'Medium', 'Hot'],
+        default: 'Medium',
+      },
+    ],
   },
 
   // ─────────────────────────────
@@ -550,6 +585,13 @@ export const menuItemDetails: MenuItemDetail[] = [
     dietaryInfo: ['Vegetarian option available', 'Contains Gluten', 'Contains Soy'],
     chefNotes: 'Tell us if you want it extra spicy or extra saucy.',
     perfectFor: 'Late-night noodle cravings.',
+    modifiers: [
+      {
+        name: 'Spice Level',
+        options: ['Mild', 'Medium', 'Hot'],
+        default: 'Medium',
+      },
+    ],
   },
   {
     id: 'fried-rice',
@@ -585,6 +627,13 @@ export const menuItemDetails: MenuItemDetail[] = [
     dietaryInfo: ['Vegetarian option available', 'Contains Gluten', 'Contains Soy'],
     chefNotes: 'Ask for egg-free if you want it vegetarian.',
     perfectFor: 'Comfort-carb lovers who want big flavor.',
+    modifiers: [
+      {
+        name: 'Spice Level',
+        options: ['Mild', 'Medium', 'Hot'],
+        default: 'Mild',
+      },
+    ],
   },
   {
     id: 'momos-steam',
@@ -811,6 +860,13 @@ export const menuItemDetails: MenuItemDetail[] = [
     dietaryInfo: ['Vegetarian', 'Contains Gluten', 'Contains Dairy'],
     chefNotes: 'Sweet, sour, spicy, and crunchy all at once.',
     perfectFor: 'Classic Indian street food experience.',
+    modifiers: [
+      {
+        name: 'Spice Level',
+        options: ['Mild', 'Medium', 'Hot'],
+        default: 'Medium',
+      },
+    ],
   },
   {
     id: 'pav-bhaji',
@@ -852,6 +908,13 @@ export const menuItemDetails: MenuItemDetail[] = [
     dietaryInfo: ['Vegetarian', 'Contains Gluten', 'Contains Dairy'],
     chefNotes: 'Authentic Mumbai-style pav bhaji with generous butter and fresh vegetables. Best enjoyed hot with extra butter on top!',
     perfectFor: 'Comfort food cravings and authentic Indian street food experience.',
+    modifiers: [
+      {
+        name: 'Spice Level',
+        options: ['Mild', 'Medium', 'Hot'],
+        default: 'Medium',
+      },
+    ],
   },
 
   // ─────────────────────────────
@@ -897,6 +960,13 @@ export const menuItemDetails: MenuItemDetail[] = [
     dietaryInfo: ['Contains Dairy'],
     chefNotes: 'Served with raita and lemon.',
     perfectFor: 'Biryani nights and serious hunger.',
+    modifiers: [
+      {
+        name: 'Spice Level',
+        options: ['Mild', 'Medium', 'Hot'],
+        default: 'Medium',
+      },
+    ],
   },
   {
     id: 'veg-biryani',
@@ -938,6 +1008,13 @@ export const menuItemDetails: MenuItemDetail[] = [
     dietaryInfo: ['Vegetarian', 'Contains Dairy'],
     chefNotes: 'Pairs beautifully with raita or plain yogurt.',
     perfectFor: 'Veg biryani lovers who want full flavor.',
+    modifiers: [
+      {
+        name: 'Spice Level',
+        options: ['Mild', 'Medium', 'Hot'],
+        default: 'Medium',
+      },
+    ],
   },
   {
     id: 'veg-pulav',
@@ -972,6 +1049,13 @@ export const menuItemDetails: MenuItemDetail[] = [
     dietaryInfo: ['Vegetarian', 'Contains Dairy'],
     chefNotes: 'Lighter than biryani but still very satisfying.',
     perfectFor: 'When you want something lighter than biryani.',
+    modifiers: [
+      {
+        name: 'Spice Level',
+        options: ['Mild', 'Medium', 'Hot'],
+        default: 'Mild',
+      },
+    ],
   },
   {
     id: 'goat-pulav',
@@ -1008,6 +1092,13 @@ export const menuItemDetails: MenuItemDetail[] = [
     dietaryInfo: ['Contains Dairy'],
     chefNotes: 'Aromatic and slightly richer than chicken variants.',
     perfectFor: 'Goat meat lovers who enjoy layered flavor.',
+    modifiers: [
+      {
+        name: 'Spice Level',
+        options: ['Mild', 'Medium', 'Hot'],
+        default: 'Medium',
+      },
+    ],
   },
   {
     id: 'rice-white',
@@ -1413,17 +1504,17 @@ export const menuItemDetails: MenuItemDetail[] = [
   // ─────────────────────────────
   {
     id: 'butter-chicken',
-    name: 'Butter Chicken',
+    name: 'Butter Chicken / Lamb Chicken',
     category: 'Non Vegetarian Curries(16 oz box)',
     categoryId: 'curries-non-veg',
-    price: '$13.99',
+    price: '$13.99 / $15.99',
     isLateNightSpecial: true,
     lateNightDisplayName: 'Butter Chicken Curry',
     description:
-      'Creamy, buttery tomato-based chicken curry with a mild, slightly sweet profile.',
+      'Creamy, buttery tomato-based curry with your choice of chicken or lamb, featuring a mild, slightly sweet profile.',
     image: '/assets/menu/curries-non-veg/1.webp',
     ingredients: [
-      'Chicken',
+      'Chicken or Lamb',
       'Tomatoes',
       'Butter',
       'Heavy Cream',
@@ -1448,9 +1539,14 @@ export const menuItemDetails: MenuItemDetail[] = [
     },
     tags: ['Popular', 'Signature Dish', 'Mild'],
     dietaryInfo: ['Contains Dairy', 'Contains Nuts'],
-    chefNotes: 'Our most loved chicken curry. Great for first-timers.',
+    chefNotes: 'Our most loved curry. Great for first-timers. Choose chicken or lamb.',
     perfectFor: 'Comfort food and "safe but tasty" spice levels.',
     modifiers: [
+      {
+        name: 'Protein Type',
+        options: ['Chicken', 'Lamb'],
+        default: 'Chicken',
+      },
       {
         name: 'Spice Level',
         options: ['Mild', 'Medium', 'Hot'],
@@ -1463,7 +1559,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     name: 'Chicken Tikka Masala / Lamb Tikka Masala',
     category: 'Non Vegetarian Curries(16 oz box)',
     categoryId: 'curries-non-veg',
-    price: '$13.99',
+    price: '$13.99 / $15.99',
     description:
       'Grilled chicken tikka pieces in a creamy, spiced tomato gravy with a smoky touch.',
     image: '/assets/menu/curries-non-veg/2.webp',
@@ -1513,7 +1609,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     name: 'Chicken Korma / Lamb Korma (with Mix Veggies)',
     category: 'Non Vegetarian Curries(16 oz box)',
     categoryId: 'curries-non-veg',
-    price: '$14.49',
+    price: '$14.49 / $16.49',
     description:
       'Chicken and mixed vegetables in a rich, mildly spiced, creamy korma gravy.',
     image: '/assets/menu/curries-non-veg/3.webp',
@@ -1561,7 +1657,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     name: 'Traditional Chicken Curry / Lamb Curry',
     category: 'Non Vegetarian Curries(16 oz box)',
     categoryId: 'curries-non-veg',
-    price: '$13.99',
+    price: '$13.99 / $15.99',
     description:
       'Classic homestyle chicken curry with onions, tomatoes, and a balanced spice mix.',
     image: '/assets/menu/curries-non-veg/4.webp',
@@ -1656,15 +1752,15 @@ export const menuItemDetails: MenuItemDetail[] = [
   },
   {
     id: 'chicken-saag',
-    name: 'Chicken Saag (Spinach)',
+    name: 'Chicken Saag / Lamb Chicken (Spinach)',
     category: 'Non Vegetarian Curries(16 oz box)',
     categoryId: 'curries-non-veg',
-    price: '$13.99',
+    price: '$13.99 / $15.99',
     description:
-      'Chicken simmered in a smooth spinach gravy with gentle spices.',
+      'Your choice of chicken or lamb simmered in a smooth spinach gravy with gentle spices.',
     image: '/assets/menu/curries-non-veg/6.webp',
     ingredients: [
-      'Chicken',
+      'Chicken or Lamb',
       'Spinach',
       'Onions',
       'Tomatoes',
@@ -1687,9 +1783,14 @@ export const menuItemDetails: MenuItemDetail[] = [
     },
     tags: ['Healthy-ish', 'Non-Vegetarian'],
     dietaryInfo: ['Contains Dairy'],
-    chefNotes: 'A great way to sneak in greens with your protein.',
+    chefNotes: 'A great way to sneak in greens with your protein. Choose chicken or lamb.',
     perfectFor: 'When you want something hearty but not too heavy.',
     modifiers: [
+      {
+        name: 'Protein Type',
+        options: ['Chicken', 'Lamb'],
+        default: 'Chicken',
+      },
       {
         name: 'Spice Level',
         options: ['Mild', 'Medium', 'Hot'],
@@ -1699,15 +1800,15 @@ export const menuItemDetails: MenuItemDetail[] = [
   },
   {
     id: 'mango-chicken',
-    name: 'Mango Chicken',
+    name: 'Mango Chicken / Mango Lamb',
     category: 'Non Vegetarian Curries(16 oz box)',
     categoryId: 'curries-non-veg',
-    price: '$13.99',
+    price: '$13.99 / $15.99',
     description:
-      'Chicken cooked with fresh mango for a sweet, tangy, and mildly spiced curry.',
+      'Your choice of chicken or lamb cooked with fresh mango for a sweet, tangy, and mildly spiced curry.',
     image: '/assets/menu/curries-non-veg/7.webp',
     ingredients: [
-      'Chicken',
+      'Chicken or Lamb',
       'Mango',
       'Onions',
       'Tomatoes',
@@ -1733,9 +1834,14 @@ export const menuItemDetails: MenuItemDetail[] = [
     tags: ['Unique', 'Sweet & Tangy'],
     dietaryInfo: ['Contains Dairy'],
     chefNotes:
-      'A unique twist with fruity sweetness balancing gentle spice.',
+      'A unique twist with fruity sweetness balancing gentle spice. Choose chicken or lamb.',
     perfectFor: 'When you want to try something different.',
     modifiers: [
+      {
+        name: 'Protein Type',
+        options: ['Chicken', 'Lamb'],
+        default: 'Chicken',
+      },
       {
         name: 'Spice Level',
         options: ['Mild', 'Medium', 'Hot'],

@@ -22,10 +22,38 @@ export default function ModifiersSelector({ modifiers }: ModifiersSelectorProps)
   });
 
   const handleModifierChange = (modifierName: string, option: string) => {
+    // Don't allow changes to Spice Level and Protein Type - they're display only
+    if (modifierName === 'Spice Level' || modifierName === 'Protein Type') {
+      return;
+    }
     setSelectedModifiers((prev) => ({
       ...prev,
       [modifierName]: option,
     }));
+  };
+
+  const getSpiceLevelColors = (option: string) => {
+    switch (option.toLowerCase()) {
+      case 'mild':
+        return 'bg-green-100 text-green-800 border-green-300 hover:bg-green-200';
+      case 'medium':
+        return 'bg-orange-100 text-orange-800 border-orange-300 hover:bg-orange-200';
+      case 'hot':
+        return 'bg-red-200 text-red-900 border-red-400 hover:bg-red-300';
+      default:
+        return 'bg-white text-neutral-600 border-neutral-300';
+    }
+  };
+
+  const getProteinTypeColors = (option: string) => {
+    switch (option.toLowerCase()) {
+      case 'chicken':
+        return 'bg-amber-100 text-amber-800 border-amber-300 hover:bg-amber-200';
+      case 'lamb':
+        return 'bg-rose-200 text-rose-900 border-rose-400 hover:bg-rose-300';
+      default:
+        return 'bg-white text-neutral-600 border-neutral-300';
+    }
   };
 
   if (!modifiers || modifiers.length === 0) {
@@ -38,38 +66,71 @@ export default function ModifiersSelector({ modifiers }: ModifiersSelectorProps)
         Customize Your Order
       </h3>
       <div className="space-y-4 sm:space-y-5">
-        {modifiers.map((modifier, index) => (
-          <div key={index} className="space-y-2 sm:space-y-3">
-            <label className="block text-sm sm:text-base font-semibold text-neutral-700 mb-2">
-              {modifier.name}
-            </label>
-            <div className="flex flex-wrap gap-2 sm:gap-3">
-              {modifier.options.map((option) => {
-                const isSelected = selectedModifiers[modifier.name] === option;
-                return (
-                  <button
-                    key={option}
-                    type="button"
-                    onClick={() => handleModifierChange(modifier.name, option)}
-                    className={`px-4 py-2.5 sm:px-5 sm:py-3 text-sm sm:text-base font-semibold rounded-lg border-2 transition-all duration-300 ${
-                      isSelected
-                        ? 'bg-primary text-white border-primary shadow-md scale-105'
-                        : 'bg-white text-neutral-700 border-neutral-300 hover:border-primary/50 hover:bg-primary/5'
-                    }`}
-                  >
-                    {option}
-                  </button>
-                );
-              })}
+        {modifiers.map((modifier, index) => {
+          const isSpiceLevel = modifier.name === 'Spice Level';
+          const isProteinType = modifier.name === 'Protein Type';
+          const isDisplayOnly = isSpiceLevel || isProteinType;
+          
+          return (
+            <div key={index} className="space-y-2 sm:space-y-3">
+              <label className="block text-sm sm:text-base font-semibold text-neutral-700 mb-2">
+                {modifier.name}
+                {isDisplayOnly && (
+                  <span className="ml-2 text-xs text-neutral-500 font-normal">(Available options)</span>
+                )}
+              </label>
+              <div className="flex flex-wrap gap-2 sm:gap-3">
+                {modifier.options.map((option) => {
+                  // For display-only modifiers, never show as selected
+                  const isSelected = isDisplayOnly 
+                    ? false 
+                    : selectedModifiers[modifier.name] === option;
+                  
+                  // Get color classes for display-only modifiers
+                  let displayColors = '';
+                  if (isSpiceLevel) {
+                    displayColors = getSpiceLevelColors(option);
+                  } else if (isProteinType) {
+                    displayColors = getProteinTypeColors(option);
+                  }
+                  
+                  return (
+                    <button
+                      key={option}
+                      type="button"
+                      onClick={() => handleModifierChange(modifier.name, option)}
+                      disabled={isDisplayOnly}
+                      className={`px-4 py-2.5 sm:px-5 sm:py-3 text-sm sm:text-base font-semibold rounded-lg border-2 transition-all duration-300 ${
+                        isDisplayOnly
+                          ? `cursor-default ${displayColors}`
+                          : 'cursor-pointer'
+                      } ${
+                        !isDisplayOnly && isSelected
+                          ? 'bg-primary text-white border-primary shadow-md scale-105'
+                          : !isDisplayOnly
+                          ? 'bg-white text-neutral-700 border-neutral-300 hover:border-primary/50 hover:bg-primary/5'
+                          : ''
+                      }`}
+                    >
+                      {option}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
-      <div className="mt-4 sm:mt-5 pt-4 sm:pt-5 border-t border-primary/20">
-        <p className="text-xs sm:text-sm text-neutral-600 italic">
-          Your selections: {Object.values(selectedModifiers).join(', ')}
-        </p>
-      </div>
+      {Object.keys(selectedModifiers).some(key => key !== 'Spice Level' && key !== 'Protein Type') && (
+        <div className="mt-4 sm:mt-5 pt-4 sm:pt-5 border-t border-primary/20">
+          <p className="text-xs sm:text-sm text-neutral-600 italic">
+            Your selections: {Object.entries(selectedModifiers)
+              .filter(([key]) => key !== 'Spice Level' && key !== 'Protein Type')
+              .map(([, value]) => value)
+              .join(', ')}
+          </p>
+        </div>
+      )}
     </div>
   );
 }
