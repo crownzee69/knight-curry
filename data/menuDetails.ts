@@ -60,6 +60,13 @@ export const menuItemDetails: MenuItemDetail[] = [
     ],
     allergens: ['Gluten', 'Dairy'],
     spiceLevel: 'Medium',
+    modifiers: [
+      {
+        name: 'Spice Level',
+        options: ['Mild', 'Medium', 'Hot'],
+        default: 'Medium',
+      },
+    ],
     preparationTime: '15-20 minutes',
     servingSize: '1 Person',
     calories: '650-750 cal',
@@ -93,6 +100,13 @@ export const menuItemDetails: MenuItemDetail[] = [
     ],
     allergens: ['Gluten', 'Dairy'],
     spiceLevel: 'Medium',
+    modifiers: [
+      {
+        name: 'Spice Level',
+        options: ['Mild', 'Medium', 'Hot'],
+        default: 'Medium',
+      },
+    ],
     preparationTime: '15-20 minutes',
     servingSize: '1 Person',
     calories: '720-820 cal',
@@ -125,6 +139,13 @@ export const menuItemDetails: MenuItemDetail[] = [
     ],
     allergens: ['Gluten', 'Dairy'],
     spiceLevel: 'Medium',
+    modifiers: [
+      {
+        name: 'Spice Level',
+        options: ['Mild', 'Medium', 'Hot'],
+        default: 'Medium',
+      },
+    ],
     preparationTime: '15-20 minutes',
     servingSize: '1 Person',
     calories: '780-880 cal',
@@ -157,6 +178,13 @@ export const menuItemDetails: MenuItemDetail[] = [
     ],
     allergens: ['Gluten', 'Dairy'],
     spiceLevel: 'Medium',
+    modifiers: [
+      {
+        name: 'Spice Level',
+        options: ['Mild', 'Medium', 'Hot'],
+        default: 'Medium',
+      },
+    ],
     preparationTime: '18-25 minutes',
     servingSize: '1 Person',
     calories: '820-920 cal',
@@ -188,6 +216,13 @@ export const menuItemDetails: MenuItemDetail[] = [
     ],
     allergens: ['Gluten', 'Dairy'],
     spiceLevel: 'Medium',
+    modifiers: [
+      {
+        name: 'Spice Level',
+        options: ['Mild', 'Medium', 'Hot'],
+        default: 'Medium',
+      },
+    ],
     preparationTime: '18-25 minutes',
     servingSize: '1 Person',
     calories: '880-980 cal',
@@ -1504,7 +1539,7 @@ export const menuItemDetails: MenuItemDetail[] = [
   // ─────────────────────────────
   {
     id: 'butter-chicken',
-    name: 'Butter Chicken / Lamb Chicken',
+    name: 'Butter Chicken / Butter Lamb',
     category: 'Non Vegetarian Curries(16 oz box)',
     categoryId: 'curries-non-veg',
     price: '$13.99 / $15.99',
