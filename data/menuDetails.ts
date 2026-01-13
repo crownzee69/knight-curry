@@ -1787,7 +1787,7 @@ export const menuItemDetails: MenuItemDetail[] = [
   },
   {
     id: 'chicken-saag',
-    name: 'Chicken Saag / Lamb Chicken (Spinach)',
+    name: 'Chicken Saag / Lamb Saag (Spinach)',
     category: 'Non Vegetarian Curries(16 oz box)',
     categoryId: 'curries-non-veg',
     price: '$13.99 / $15.99',
