@@ -7,6 +7,7 @@ const nextConfig = {
     unoptimized: true,                 // ⭐ IMPORTANT
     dangerouslyAllowSVG: true,
     remotePatterns: [],                // no remote restrictions needed
+    qualities: [25, 50, 75, 85, 100],  // FIX: allow 85 quality
   },
 
   // Performance optimizations

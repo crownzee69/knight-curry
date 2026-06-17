@@ -59,7 +59,7 @@ export default function RootLayout({
     <html lang="en" className={`${poppins.variable} ${dmSans.variable} ${anton.variable}`}>
       <head>
         {/* Preload your main food image from the new Hero */}
-        <link rel="preload" as="image" href="/assets/menu/Signature_Partition_Platters/1-1.png" fetchPriority="high" />
+        {/* Dynamic preloads based on pathname can be added here if needed */}
         <link rel="dns-prefetch" href="https://unpkg.com" />
       </head>
       {/* Body tag is where globals.css applies bg-neutral-50 and pb-16 */}
