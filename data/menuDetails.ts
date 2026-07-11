@@ -2166,7 +2166,7 @@ export const menuItemDetails: MenuItemDetail[] = [
     categoryId: 'sandwiches-burgers-pizzas',
     price: '$8.99',
     description:
-      'Juicy chicken patty burger with lettuce, onions, and sauces. Served with a side of Knights Fries or Chips.',
+      'Crispy fried chicken burger with lettuce, onions, and sauces. Served with a side of Knights Fries or Chips.',
     image: '/assets/menu/sandwiches-burgers-pizzas/7.webp',
     ingredients: [
       'Burger Bun',
