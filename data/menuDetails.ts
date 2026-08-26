@@ -1895,8 +1895,8 @@ export const menuItemDetails: MenuItemDetail[] = [
     categoryId: 'sandwiches-burgers-pizzas',
     price: '$6.99',
     description:
-      'Layered sandwich stuffed with fresh veggies, spreads, and toasted bread. Served with a side of Knights Fries or Chips.',
-    image: '/assets/menu/sandwiches-burgers-pizzas/2.webp',
+      'Layered sandwich stuffed with fresh veggies, spreads, and untoasted bread. Served with a side of Knights Fries or Chips.',
+    image: '/assets/menu/sandwiches-burgers-pizzas/veg-club-sandwich-v2.webp',
     ingredients: [
       'Bread',
       'Lettuce',
