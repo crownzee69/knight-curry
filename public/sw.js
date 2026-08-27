@@ -1,7 +1,7 @@
 // Service Worker for caching images and data
-const CACHE_NAME = 'knight-curry-v3';
-const IMAGE_CACHE = 'knight-curry-images-v3';
-const DATA_CACHE = 'knight-curry-data-v3';
+const CACHE_NAME = 'knight-curry-v4';
+const IMAGE_CACHE = 'knight-curry-images-v4';
+const DATA_CACHE = 'knight-curry-data-v4';
 
 // Assets to cache on install
 const STATIC_ASSETS = [
@@ -134,6 +134,27 @@ self.addEventListener('fetch', (event) => {
   }
 
   // Handle other requests (HTML, CSS, JS)
+  // For navigate requests (HTML pages), try network first, fallback to cache
+  if (request.mode === 'navigate') {
+    event.respondWith(
+      fetch(request)
+        .then((networkResponse) => {
+          if (networkResponse.ok) {
+            const responseClone = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put(request, responseClone);
+            });
+          }
+          return networkResponse;
+        })
+        .catch(() => {
+          return caches.match(request);
+        })
+    );
+    return;
+  }
+
+  // For static assets (CSS, JS, etc.), try cache first, fallback to network
   event.respondWith(
     caches.match(request).then((cachedResponse) => {
       if (cachedResponse) {
