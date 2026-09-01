@@ -58,6 +58,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${poppins.variable} ${dmSans.variable} ${anton.variable}`}>
       <head>
+        <meta name="google-site-verification" content="Urf1u7zuIyHtY5V3UYtYMFfBmvzs6TWNgqxqqF4Z6YM" />
         {/* Preload your main food image from the new Hero */}
         {/* Dynamic preloads based on pathname can be added here if needed */}
         <link rel="dns-prefetch" href="https://unpkg.com" />
