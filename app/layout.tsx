@@ -33,8 +33,8 @@ const anton = Anton({
 })
 
 export const metadata: Metadata = {
-  title: "Knights Curry Express - Hot, Fresh & Spicy Indian Food",
-  description: "Knights Curry Express - Authentic Indian flavors, delivered fast & fresh. Order your favorite curries, biryanis, and platters today!",
+  title: "Knights Curry Express - Best Indian Food in Orlando, FL",
+  description: "Craving authentic Indian food in Orlando? Knights Curry Express offers hot, fresh curries, biryanis, and platters. Dine-in, takeout, or delivery near University Blvd!",
   icons: {
     icon: '/favicon.svg',
     shortcut: '/favicon.svg',

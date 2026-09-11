@@ -40,6 +40,20 @@ export default async function MenuItemDetailPage({ params }: { params: Promise<{
     notFound();
   }
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'MenuItem',
+    name: item.name,
+    description: item.description,
+    image: `https://www.knightscurryexpress.com${item.image}`,
+    offers: {
+      '@type': 'Offer',
+      price: item.price.replace(/[^0-9.]/g, ''),
+      priceCurrency: 'USD'
+    },
+    suitableForDiet: item.dietaryInfo?.includes('Vegetarian') || item.tags?.includes('Vegetarian') ? 'https://schema.org/VegetarianDiet' : undefined,
+  };
+
   const getSpiceColor = (level: string) => {
     switch (level.toLowerCase()) {
       case 'mild':
@@ -60,6 +74,10 @@ export default async function MenuItemDetailPage({ params }: { params: Promise<{
 
   return (
     <Layout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Scroll to top when page loads */}
       <ScrollToTop />
       
