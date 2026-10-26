@@ -1,12 +1,55 @@
+import type { Metadata } from 'next';
 import Layout from '@/components/Layout';
 import HomepageBackground from '@/components/HomepageBackground';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+
+// Keywords: Knights Curry Express hours, Knights Curry Express location, takeout near UCF
+export const metadata: Metadata = {
+  title: 'Location & Hours',
+  description:
+    'Find Knights Curry Express near UCF in Orlando at 11565 University Blvd. View hours, get directions, order takeout near UCF, or call us.',
+  alternates: {
+    canonical: 'https://www.knightscurryexpress.com/location-and-hours',
+  },
+  openGraph: {
+    title: 'Location & Hours | Knights Curry Express',
+    description:
+      'Knights Curry Express near UCF — hours, directions and takeout near UCF on University Blvd, Orlando.',
+    url: 'https://www.knightscurryexpress.com/location-and-hours',
+    siteName: 'Knights Curry Express',
+    type: 'website',
+  },
+};
 
 export default function LocationAndHoursPage() {
   return (
     <Layout>
       {/* Location and Hours Page Background - Repeating Wallpaper */}
       <HomepageBackground />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: 'https://www.knightscurryexpress.com',
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Location & Hours',
+                item: 'https://www.knightscurryexpress.com/location-and-hours',
+              },
+            ],
+          }),
+        }}
+      />
 
       <article className="relative z-10">
         {/* Enhanced Hero Section */}

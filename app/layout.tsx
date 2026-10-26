@@ -33,12 +33,21 @@ const anton = Anton({
 })
 
 export const metadata: Metadata = {
-  title: "Knights Curry Express - Best Indian Food in Orlando, FL",
-  description: "Craving authentic Indian food in Orlando? Knights Curry Express offers hot, fresh curries, biryanis, and platters. Dine-in, takeout, or delivery near University Blvd!",
+  title: {
+    default: 'Knights Curry Express — Halal Indian Food Near UCF, Orlando FL',
+    template: '%s | Knights Curry Express',
+  },
+  description:
+    'Halal Indian food near UCF in Orlando. Curries, biryani & platters from $5.49. Open late Fri & Sat. Takeout, dine-in & delivery on major apps.',
+  metadataBase: new URL('https://www.knightscurryexpress.com'),
   icons: {
     icon: '/favicon.svg',
     shortcut: '/favicon.svg',
     apple: '/favicon.svg',
+  },
+  openGraph: {
+    siteName: 'Knights Curry Express',
+    type: 'website',
   },
 }
 

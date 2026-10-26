@@ -15,13 +15,37 @@ export default function LateNightSpecialsPage() {
     <Layout>
       <HomepageBackground />
       
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: 'https://www.knightscurryexpress.com',
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Late Night Specials',
+                item: 'https://www.knightscurryexpress.com/late-night-specials',
+              },
+            ],
+          }),
+        }}
+      />
+
       <article className="relative z-10">
         {/* Hero Section */}
         <section className="pt-8 sm:pt-10 md:pt-12 lg:pt-16 xl:pt-20 pb-4 sm:pb-6 text-center">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.8rem] font-display font-black text-neutral-900 mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.8rem] font-display font-black text-neutral-900 mb-4">
   Late Night Food for Hungry Knights
-</h2>
+</h1>
 
             
             {/* Highlighted Box */}
@@ -42,7 +66,11 @@ export default function LateNightSpecialsPage() {
                   Big Platters. Fresh Ingredients. Bold Flavors. Small Prices.
                 </p>
                 <p className="text-base sm:text-lg md:text-xl text-neutral-800 font-semibold leading-relaxed">
-                  Halal Indian platters and street food, just minutes from UCF — perfect for late-night cravings.
+                  Halal Indian{' '}
+                  <Link href="/menu/platters" className="underline decoration-primary/40 hover:decoration-primary transition-colors">
+                    platters
+                  </Link>{' '}
+                  and street food, just minutes from UCF — perfect for late-night cravings.
             </p>
               </div>
             </div>
