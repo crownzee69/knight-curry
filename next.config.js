@@ -19,7 +19,7 @@ const nextConfig = {
 
   // Mobile-first optimizations
   experimental: {
-    optimizePackageImports: ['next/image', 'next/link', 'react', 'react-dom'],
+    optimizePackageImports: ['next/image', 'next/link', 'react', 'react-dom', 'lucide-react', 'framer-motion'],
   },
 
   // Compiler optimizations

@@ -13,11 +13,11 @@ export default function SplashAnimation() {
   useEffect(() => {
     setIsMounted(true);
     
-    // Start fading out after 4 seconds
-    const fadeTimer = setTimeout(() => setIsVisible(false), 4000);
+    // Start fading out after 2.5 seconds
+    const fadeTimer = setTimeout(() => setIsVisible(false), 2500);
     
-    // Completely remove from DOM after fade completes (5 seconds)
-    const removeTimer = setTimeout(() => setIsRendered(false), 5000);
+    // Completely remove from DOM after fade completes (3.5 seconds)
+    const removeTimer = setTimeout(() => setIsRendered(false), 3500);
     
     return () => {
       clearTimeout(fadeTimer);
@@ -45,6 +45,7 @@ export default function SplashAnimation() {
           animate={{ scale: 1.5, opacity: 0 }}
           transition={{ delay: 1.6, duration: 0.6, ease: "easeInOut" }}
           className="absolute z-20"
+          style={{ willChange: 'transform' }}
         >
           <svg viewBox="0 0 100 60" className="w-48 h-48 drop-shadow-[0_0_15px_rgba(245,158,11,0.6)] overflow-visible">
             {/* Bowl body */}
@@ -81,6 +82,7 @@ export default function SplashAnimation() {
               animate={{ x, y, scale: Math.random() * 2 + 0.5, opacity: 0 }}
               transition={{ duration: 1.0, delay: 1.5, ease: "easeOut" }}
               className={`absolute z-10 w-5 h-5 rounded-full ${colors[i % colors.length]} blur-[2px] mix-blend-screen pointer-events-none`}
+              style={{ willChange: 'transform' }}
             />
           );
         })}
@@ -99,6 +101,7 @@ export default function SplashAnimation() {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ delay: 1.9, duration: 1, type: "spring", bounce: 0.4 }}
           className="absolute z-30 flex flex-col items-center"
+          style={{ willChange: 'transform' }}
         >
           <div className="relative w-48 h-48 md:w-64 md:h-64 drop-shadow-[0_0_30px_rgba(220,38,38,0.4)]">
             <Image

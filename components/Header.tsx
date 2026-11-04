@@ -1,12 +1,16 @@
 'use client';
 
-import { useState, useEffect, memo } from 'react';
+import { useState, useEffect, memo, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Flame, Moon } from 'lucide-react';
 import { motion } from 'framer-motion';
-import OrderRedirectModal from './OrderRedirectModal';
+import dynamic from 'next/dynamic';
+
+const OrderRedirectModal = dynamic(() => import('./OrderRedirectModal'), {
+  ssr: false,
+});
 
 function Header() {
   const [navbarActive, setNavbarActive] = useState(false);
@@ -19,15 +23,15 @@ function Header() {
 
   const ORDER_URL = 'https://online.skytab.com/dfea7884072bca160af82d415c72f7bf';
 
-  const handleOrderClick = (e: React.MouseEvent) => {
+  const handleOrderClick = useCallback((e: React.MouseEvent) => {
     e.preventDefault();
     setShowOrderModal(true);
-  };
+  }, []);
 
-  const handleOrderConfirm = () => {
+  const handleOrderConfirm = useCallback(() => {
     setShowOrderModal(false);
     window.location.href = ORDER_URL;
-  };
+  }, []);
 
   useEffect(() => {
     let ticking = false;
@@ -81,16 +85,16 @@ function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleNavbar = () => {
+  const toggleNavbar = useCallback(() => {
     setNavbarActive(!navbarActive);
     document.body.classList.toggle('nav-active');
-  };
+  }, [navbarActive]);
 
-  const closeNavbar = () => {
+  const closeNavbar = useCallback(() => {
     setNavbarActive(false);
     setMenuDropdown(false);
     document.body.classList.remove('nav-active');
-  };
+  }, []);
 
   return (
     <>
@@ -376,11 +380,13 @@ function Header() {
       </button>
 
       {/* Order Redirect Modal */}
-      <OrderRedirectModal
-        isOpen={showOrderModal}
-        onClose={() => setShowOrderModal(false)}
-        onConfirm={handleOrderConfirm}
-      />
+      {showOrderModal && (
+        <OrderRedirectModal
+          isOpen={showOrderModal}
+          onClose={() => setShowOrderModal(false)}
+          onConfirm={handleOrderConfirm}
+        />
+      )}
     </>
   );
 }
