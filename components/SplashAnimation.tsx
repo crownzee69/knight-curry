@@ -1,9 +1,20 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 
+// Pre-compute burst positions at module level (not on every render)
+const BURST_PARTICLES = Array.from({ length: 12 }, (_, i) => {
+  const angle = (i * 30) * (Math.PI / 180);
+  const radius = 110 + (i % 3) * 30;
+  return {
+    x: Math.cos(angle) * radius,
+    y: Math.sin(angle) * radius,
+    scale: 0.8 + (i % 3) * 0.5,
+    color: ['bg-red-600', 'bg-amber-400', 'bg-orange-500', 'bg-yellow-400'][i % 4],
+  };
+});
 
 export default function SplashAnimation() {
   const [isMounted, setIsMounted] = useState(false);
@@ -12,13 +23,13 @@ export default function SplashAnimation() {
 
   useEffect(() => {
     setIsMounted(true);
-    
-    // Start fading out after 2.5 seconds
-    const fadeTimer = setTimeout(() => setIsVisible(false), 2500);
-    
-    // Completely remove from DOM after fade completes (3.5 seconds)
-    const removeTimer = setTimeout(() => setIsRendered(false), 3500);
-    
+
+    // Start fading out after 1.8 seconds (reduced from 2.5s)
+    const fadeTimer = setTimeout(() => setIsVisible(false), 1800);
+
+    // Completely remove from DOM after fade completes (2.8 seconds, reduced from 3.5s)
+    const removeTimer = setTimeout(() => setIsRendered(false), 2800);
+
     return () => {
       clearTimeout(fadeTimer);
       clearTimeout(removeTimer);
@@ -68,24 +79,17 @@ export default function SplashAnimation() {
           </svg>
         </motion.div>
 
-        {/* Flavor Burst Explosion */}
-        {[...Array(20)].map((_, i) => {
-          const angle = (i * 18) * (Math.PI / 180);
-          const radius = 120 + Math.random() * 80;
-          const x = Math.cos(angle) * radius;
-          const y = Math.sin(angle) * radius;
-          const colors = ['bg-red-600', 'bg-amber-400', 'bg-orange-500', 'bg-yellow-400'];
-          return (
-            <motion.div
-              key={`burst-${i}`}
-              initial={{ x: 0, y: 0, scale: 0, opacity: 1 }}
-              animate={{ x, y, scale: Math.random() * 2 + 0.5, opacity: 0 }}
-              transition={{ duration: 1.0, delay: 1.5, ease: "easeOut" }}
-              className={`absolute z-10 w-5 h-5 rounded-full ${colors[i % colors.length]} blur-[2px] mix-blend-screen pointer-events-none`}
-              style={{ willChange: 'transform' }}
-            />
-          );
-        })}
+        {/* Flavor Burst Explosion - reduced to 12 particles, pre-computed positions */}
+        {BURST_PARTICLES.map((p, i) => (
+          <motion.div
+            key={`burst-${i}`}
+            initial={{ x: 0, y: 0, scale: 0, opacity: 1 }}
+            animate={{ x: p.x, y: p.y, scale: p.scale, opacity: 0 }}
+            transition={{ duration: 0.8, delay: 1.2, ease: 'easeOut' }}
+            className={`absolute z-10 w-4 h-4 rounded-full ${p.color} blur-[2px] mix-blend-screen pointer-events-none`}
+            style={{ willChange: 'transform, opacity' }}
+          />
+        ))}
         
         {/* Inner Glow expanding and fading */}
         <motion.div

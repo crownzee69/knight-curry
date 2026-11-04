@@ -1,10 +1,13 @@
 import type { Metadata } from 'next';
 import Layout from '@/components/Layout';
 import Hero from '@/components/Hero';
-import MenuCategoriesHero from '@/components/MenuCategoriesHero';
-import About from '@/components/About';
 import HomepageBackground from '@/components/HomepageBackground';
-import SplashAnimation from '@/components/SplashAnimation';
+import dynamic from 'next/dynamic';
+
+// Lazy-load below-the-fold and non-critical components (no ssr:false since page.tsx is a Server Component)
+const SplashAnimation = dynamic(() => import('@/components/SplashAnimation'));
+const MenuCategoriesHero = dynamic(() => import('@/components/MenuCategoriesHero'));
+const About = dynamic(() => import('@/components/About'));
 
 // Keywords: Indian food near UCF, halal food Orlando, halal restaurants near UCF,
 // restaurants near UCF, best food near UCF, food delivery near UCF

@@ -68,9 +68,24 @@ export default function RootLayout({
     <html lang="en" className={`${poppins.variable} ${dmSans.variable} ${anton.variable}`}>
       <head>
         <meta name="google-site-verification" content="Urf1u7zuIyHtY5V3UYtYMFfBmvzs6TWNgqxqqF4Z6YM" />
-        {/* Preload your main food image from the new Hero */}
-        {/* Dynamic preloads based on pathname can be added here if needed */}
+        {/* Preconnect to external origins */}
+        <link rel="preconnect" href="https://unpkg.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://unpkg.com" />
+        <link rel="preconnect" href="https://app.trysoro.com" crossOrigin="anonymous" />
+        {/* Preload critical logo asset */}
+        <link
+          rel="preload"
+          href="/assets/images/logo.svg"
+          as="image"
+          type="image/svg+xml"
+        />
+        {/* Preload background image */}
+        <link
+          rel="preload"
+          href="/assets/background/1.jpg"
+          as="image"
+          type="image/jpeg"
+        />
       </head>
       {/* Body tag is where globals.css applies bg-neutral-50 and pb-16 */}
       <body>
