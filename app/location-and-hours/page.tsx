@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Layout from '@/components/Layout';
 import HomepageBackground from '@/components/HomepageBackground';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import Script from 'next/script';
 
 // Keywords: Knights Curry Express hours, Knights Curry Express location, takeout near UCF
 export const metadata: Metadata = {
@@ -267,6 +268,17 @@ export default function LocationAndHoursPage() {
             </div>
 
             {/* Map Section */}
+          </div>
+        </section>
+
+        {/* Soro Blog Embed */}
+        <section className="relative z-10 py-8 sm:py-12">
+          <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="soro-blog"></div>
+            <Script
+              src="https://app.trysoro.com/api/embed/aaca3629-3fee-41de-a024-e06b139a7ace"
+              strategy="afterInteractive"
+            />
           </div>
         </section>
       </article>
